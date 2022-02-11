@@ -41,6 +41,23 @@ function handleClick() {
   }
 }
 
+// Function to render deck state
+function render() {
+  console.log(cardPicked)
+  // Remove outline class when first card is picked
+  deck2El.classList.remove('outline')
+  // Removes previous picked card from deck 2 class list
+  if (deck2.length > 1) {
+    deck2El.classList.remove(cardToRemove)
+  }
+  // Store card to be removed next iteration
+  cardToRemove = cardPicked  
+  // Add current card (class name) picked to deck 2 element
+  deck2El.classList.add(cardPicked)
+  // Adjust shadow when deck gets above/below halfway full
+  // Remove card back color and add outline when last card is picked
+}
+
 // THE RULES
 
 // The goal of blackjack is to beat the dealer's hand without going over 21.
