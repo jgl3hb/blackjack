@@ -4,7 +4,8 @@ let deck2 = []
 
 
 /*---------------------------- Variables (state) ----------------------------*/
-
+let deck1El = document.getElementById('deck-1')
+let deck2El = document.getElementById('deck-2')
 
 
 /*------------------------ Cached Element References ------------------------*/
