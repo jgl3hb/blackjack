@@ -320,11 +320,12 @@
   background-image: url("../images/backs/red.svg"); }
 
 /* Re-orients the cards for different directions. While
-   they are symmetric, it's still important to orient
-   them correctly in case text or other symbols are
-   layered on them with CSS pseudo-selectors, new
-   classes/rules, etc. */
-   
+they are symmetric, it's still important to orient
+them correctly in case text or other symbols are
+layered on them with CSS pseudo-selectors, new
+classes/rules, etc.  */
+
+
 .card.west,
 .card.W {
   transform: rotate(90deg);

@@ -5,7 +5,7 @@
 /*---------------------------- Variables (state) ----------------------------*/
 let deck1 = []
 let deck2 = []
-
+let cardToRemove, cardPicked
 
 /*------------------------ Cached Element References ------------------------*/
 let deck1El = document.getElementById('deck-1')
@@ -26,6 +26,21 @@ function init() {
 function init() {
   deck2 = ["dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02"]
 } 
+
+// Function to handle a button click:
+function handleClick() {
+  if (deck1.length > 0) {
+    // Randomly select number from total cards remaining in deck 2
+    let randIdx = Math.floor(Math.random() * deck1.length)
+    // Assign card at the random index to a variable
+    cardPicked = deck1.splice(randIdx, 1)[0]
+    // Add card picked to deck 2
+    deck2.push(cardPicked)
+    // Pass card picked to render function to display
+    render()
+  }
+}
+
 // THE RULES
 
 // The goal of blackjack is to beat the dealer's hand without going over 21.
