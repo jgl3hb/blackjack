@@ -78,6 +78,7 @@ function render() {
 //Game 1
 
 //Player Purse = $100
+//Bet reset to 0
 //Place bet (1, 10, 25, 50) < Player Purse
 //Card 2 - 9 equals card value
 //Card 10 & Face cards = 10
@@ -98,7 +99,7 @@ function render() {
 //Dealer Hits on 16, Stand's on 17
 //If Player Hand > Dealer Hand, Player wins
 //If Dealer Hand > Player Hand, Dealer wins
-//If Player Hand = Dealer HanD, PUSH
+//If Player Hand = Dealer HanDd, PUSH
 //Player Bet +- to Player Purse
 //If Player Purse = 0, Player Broke
 //If player Purse > 1, 
@@ -218,4 +219,3 @@ function render() {
 	// 6.2) Store the new replay button element
 
 	// 6.3) Do steps 4.1 (initialize the state variables) and 4.2 (render).
-```
