@@ -1,7 +1,7 @@
-/* No need to use grid, flex and cascading elements will do the trick*/
+/* No need to use grid, flex and cascading*/
 
 body {
-  background-color: darkgreen;
+  background-image: url("https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6");
   display: flex;
   flex-direction: column;
   align-items: center;
