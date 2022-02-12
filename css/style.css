@@ -29,10 +29,10 @@ body {
 }
 
 .btn {
-  margin-top: 2vh;
-  color: white;
-  background-color: #202d7a;
+  margin-top: 1vh;
+  color: goldenrod;
+  background-color: blue;
   font-weight: bold;
-  border: 2px solid #202d7a;
+  border: 2px solid goldenrod;
 }
 
