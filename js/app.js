@@ -21,10 +21,10 @@ function init() {
   deck1 = ["dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02"]
 } 
 
-//DEALER SIX DECKS
+//// DEALER SIX DECKS
 // function init() {
 //   deck1 = ["dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02"]
-// } 
+//}
 
 
 // Function to handle a button click:
@@ -60,10 +60,25 @@ function render() {
 
 // THE RULES
 
-// The goal of blackjack is to beat the dealer's hand without going over 21.
-// Face cards are worth 10. Aces are worth 1 or 11, whichever makes a better hand.
-// Each player starts with two cards, one of the dealer's cards is hidden until the end.
-// To 'Hit' is to ask for another card. To 'Stand' is to hold your total and end your turn.
+
+
+//Game 1
+
+//Player Bank=  $500
+//Bet reset to 0
+//Place bet (1, 10, 25, 50) < Player Bank
+//Card 2 - 9 equals card value
+//Card 10 & Face cards = 10
+//Ace = 11, unless Player Hand > 21
+//then Ace = 1
+//Dealer deals two cards to Player face up
+//Dealer deals one card face up, one card face down to Dealer
+//if dealer AND Player has 21, PUSH
+//Else if Player has 21, Player Blackjack
+//Else if Dealer has 21, Dealer wins
+
+
+
 // If you go over 21 you bust, and the dealer wins regardless of the dealer's hand.
 // If you are dealt 21 from the start (Ace & 10), you got a blackjack.
 // Blackjack usually means you win 1.5 the amount of your bet. Depends on the casino.
@@ -75,27 +90,12 @@ function render() {
 // You cannot play on two aces after they are split.
 // You can double on a hand resulting from a split, tripling or quadrupling you bet.
 
-//Game 1
-
-//Player Bank=  $100
-//Bet reset to 0
-//Place bet (1, 10, 25, 50) < Player Bank
-//Card 2 - 9 equals card value
-//Card 10 & Face cards = 10
-//Ace = 1 or 11
-//Dealer deals two cards to Player face up
-//Dealer deals one card face up, one card face down to Dealer
-//f dealer AND Player has 21, PUSH
-//Else if Player has 21, Player Blackjack
-//Else if Dealer has 21, Dealer wins
-
 //Else
 //Player hits or stands
-//Ace = 11, unless Player Hand > 21
-//Else Ace = 1
 //If Player has 21, Player wins
 //If Player has > 21, Dealer wins
 //If Player Hand < 21
+//if stand dealer hits
 //Dealer Hits on 16, Stand's on 17
 //If Player Hand > Dealer Hand, Player wins
 //If Dealer Hand > Player Hand, Dealer wins
