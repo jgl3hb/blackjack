@@ -77,9 +77,9 @@ function render() {
 
 //Game 1
 
-//Player Purse = $100
+//Player Bank=  $100
 //Bet reset to 0
-//Place bet (1, 10, 25, 50) < Player Purse
+//Place bet (1, 10, 25, 50) < Player Bank
 //Card 2 - 9 equals card value
 //Card 10 & Face cards = 10
 //Ace = 1 or 11
@@ -100,9 +100,9 @@ function render() {
 //If Player Hand > Dealer Hand, Player wins
 //If Dealer Hand > Player Hand, Dealer wins
 //If Player Hand = Dealer HanDd, PUSH
-//Player Bet +- to Player Purse
-//If Player Purse = 0, Player Broke
-//If player Purse > 1, 
+//Player Bet +- to Player Bank
+//If Player Bank = 0, Player Broke
+//If player Bank > 1, 
 
 //Game 2 Begins
 
