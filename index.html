@@ -19,8 +19,8 @@
     <h1>Blackjack</h1>
     
     <div class="d-flex justify-content-center">	
-      <div id="deck" class="card large outline"></div>
-      <div id="deck" class="card large back-red shadow"></div>
+      <div id="burndeck" class="card large outline"></div>
+      <div id="dealdeck" class="card large back-red shadow"></div>
     </div>
 
           
@@ -29,6 +29,9 @@
     </section>
 
     <div class="container">	
+      <div id="dealerhand"></div>	
+      <div id="dealerhand"></div>	
+      <div id="dealerhand"></div>	
       <div id="dealerhand" class="card large outline"></div>
       <div id="dealerhand"class="card large back-red"></div>
     </div>
@@ -39,7 +42,8 @@
     
     <div class="container">		
       <div id="playerhand" class="card large outline"></div>
-      <div id="playerhand" class="card large outline"></div>		
+      <div id="playerhand" class="card large outline"></div>
+      <div id="playerhand"></div>		
     </div>
 
     <section id="playerhandvalue"> 
@@ -60,13 +64,13 @@
   
 
     <section id="dealreset" class="d-flex justify-content-center">
-      <button type="button" class="btn btn-deal">Deal</button>
-      <button type="button" class="btn btn-bet-reset">Reset Bet</button>
+      <button type="button" id="deal" class="btn btn-deal">Deal</button>
+      <button type="button" id="reset" class="btn btn-bet-reset">Reset Bet</button>
     </section> 
   
     <section id="hitstand" class="d-flex justify-content-center">
-      <button type="button" class="btn btn-hit">Hit</button>
-      <button type="button" class="btn btn-stand">Stand</button>
+      <button type="button" id="hit" class="btn btn-hit">Hit</button>
+      <button type="button" id="stand" class="btn btn-stand">Stand</button>
     </section> 
 
     <section  id="playerbank">

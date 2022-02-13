@@ -3,61 +3,95 @@
 
 
 /*---------------------------- Variables (state) ----------------------------*/
-let deck1 = []
+let dealdeck = []
+let burndeck = []
 let cardToRemove, cardPicked
 
 /*------------------------ Cached Element References ------------------------*/
-let deck1El = document.getElementById('deck-1')
+let dealdeckEl = document.getElementById('dealdeck')
+let burndeckEl = document.getElementById('burndeck')
+let bet1 = document.getElementById('bet-1')
+let bet5 = document.getElementById('bet-5')
+let bet25 = document.getElementById('bet-25')
+let bet100 = document.getElementById('bet-100')
+let deal = document.getElementById('deal')
+let reset = document.getElementById('reset')
+let hit = document.getElementById('hit')
+let stand = document.getElementById('stand')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-document.getElementById('btn').addEventListener('click', (evt)=> {
-console.log(evt.target)
+
+document.getElementById('bet-1').addEventListener('click', (evt)=> {
+	console.log(evt.target)
 })
+document.getElementById('bet-5').addEventListener('click', (evt)=> {
+	console.log(evt.target)
+})
+document.getElementById('bet-25').addEventListener('click', (evt)=> {
+	console.log(evt.target)
+})
+document.getElementById('bet-100').addEventListener('click', (evt)=> {
+	console.log(evt.target)
+})
+document.getElementById('hit').addEventListener('click', (evt)=> {
+	console.log(evt.target)
+})
+document.getElementById('stand').addEventListener('click', (evt)=> {
+	console.log(evt.target)
+})
+document.getElementById('deal').addEventListener('click', (evt)=> {
+	console.log(evt.target)
+})
+document.getElementById('reset').addEventListener('click', (evt)=> {
+	console.log(evt.target)
+})
+
 
 /*-------------------------------- Functions --------------------------------*/
 init()
 
 // function init() {
-//   deck1 = ["dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02"]
+//   dealdeck = ["dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02"]
 // } 
 
 //// DEALER SIX DECKS
 function init() {
-  deck1 = ["dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02"]
+  dealdeck = ["dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02"]
 }
 
 
 // Function to handle a button click:
-function handleClick() {
-  if (deck1.length > 0) {
-    // Randomly select number from total cards remaining in deck 2
-    let randIdx = Math.floor(Math.random() * deck1.length)
-    // Assign card at the random index to a variable
-    cardPicked = deck1.splice(randIdx, 1)[0]
-    // Add card picked to deck 2
-    deck2.push(cardPicked)
-    // Pass card picked to render function to display
-    render()
-  }
-}
+// function handleClick() {
+//   // if (dealdeck.length > 0) {
+//   //   // Randomly select number from total cards remaining in deck 2
+//   //   let randIdx = Math.floor(Math.random() * dealdeck.length)
+//   //   // Assign card at the random index to a variable
+//   //   cardPicked = dealdeck.splice(randIdx, 1)[0]
+//   //   // Add card picked to deck 2
+//   //   burndeck.push(cardPicked)
+//   //   // Pass card picked to render function to display
+//   //   render()
+//   }
+// 	console.log(handleClick)
+// }
 
 // Function to render deck state
-function render() {
-  console.log(cardPicked)
-  // Remove outline class when first card is picked
-  deck2El.classList.remove('outline')
-  // Removes previous picked card from deck 2 class list
-  if (deck2.length > 1) {
-    deck2El.classList.remove(cardToRemove)
-  }
-  // Store card to be removed next iteration
-  cardToRemove = cardPicked  
-  // Add current card (class name) picked to deck 2 element
-  deck2El.classList.add(cardPicked)
-  // Adjust shadow when deck gets above/below halfway full
-  // Remove card back color and add outline when last card is picked
-}
+// function render() {
+//   console.log(cardPicked)
+//   // Remove outline class when first card is picked
+//   burndeckEl.classList.remove('outline')
+//   // Removes previous picked card from deck 2 class list
+//   if (burndeck.length > 1) {
+//     burndeckEl.classList.remove(cardToRemove)
+//   }
+//   // Store card to be removed next iteration
+//   cardToRemove = cardPicked  
+//   // Add current card (class name) picked to deck 2 element
+//   burndeckEl.classList.add(cardPicked)
+//   // Adjust shadow when deck gets above/below halfway full
+//   // Remove card back color and add outline when last card is picked
+// }
 
 // THE RULES
 
