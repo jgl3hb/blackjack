@@ -1,4 +1,21 @@
 /* No need to use grid, flex and cascading*/
+html {
+  box-sizing: border-box
+}
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+/* resets font size to be 62.5% of the user preference - 
+   in most browser configurations this will be 10px */
+:root {
+  font-size: 62.5%
+}
 
 body {
   background-image: url("https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6");
@@ -6,19 +23,97 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50vmax;
+}
+
+main {
+  display: row;
+  flex-direction: center;
+  justify-content: center;
+  
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
 }
 
 .container {
+    
+}
+
+#deck {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
+
+}
+
+#dealerhandvalue {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+#dealerhand {
+
+} 
+
+#rules {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+} 
+
+#playerhand {
+  display: row;
+  flex-direction: center;
+  justify-content: center;
+} 
+  
+#playerhandvalue {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+} 
+
+#playerbet {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+#bet {
+
+}
+
+#dealreset {
+  
+
+}
+
+#hitstand {
+  align-items: center;
+  display: flex;
+  flex-direction: center;
+}
+
+#playerbank {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.container {
+  display: row;
+  flex-direction: column;
+  justify-content: row;
 }
 
 .card {
   margin: 3vh;
 }
+
+
 
 .card.outline {
   border: 0.15em dashed #202d7a;
@@ -28,11 +123,110 @@ body {
   box-shadow: 7px 7px 7px 0 rgba(41, 41, 41, 0.95) !important;
 }
 
+
 .btn {
-  margin-top: 1vh;
+  margin: 3px 3px 3px 3px;
   color: goldenrod;
   background-color: blue;
   font-weight: bold;
   border: 2px solid goldenrod;
+  justify-content: center;
 }
 
+
+
+
+
+
+
+/*
+@media only screen and (min-width: 650px) {
+  main {
+    display: grid;
+    text-align: center;
+    width: 250px;
+  }
+}
+  
+  #deck {
+    text-align: right;
+    color: gray;
+    padding: 10px 20px 0 0;
+  }
+
+  .card {
+    margin: 3vh;
+  }
+  
+  .card.outline {
+    border: 0.15em dashed #202d7a;
+  }
+  
+  .card.shadow {
+    box-shadow: 7px 7px 7px 0 rgba(41, 41, 41, 0.95) !important;
+  }
+  
+  .btn {
+    margin-top: 3vh;
+    color: goldenrod;
+    background-color: blue;
+    font-weight: bold;
+    border: 2px solid goldenrod;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #dealerhand {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-width: none;
+  }
+
+  #playerhand {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: none;
+  }
+  
+  #bet {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: none;
+  }
+
+  #dealreset {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: none;
+  }
+
+  
+  #hitstand {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: none;
+  }
+
+
+  /* bet {
+  display: grid;
+    text-align: left;
+    width: 500px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+      "status name"
+      "img occupation"
+      "img brand" 
+      "contact offer";
+  } */

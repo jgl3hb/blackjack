@@ -12,7 +12,6 @@ let deck1El = document.getElementById('deck-1')
 
 /*----------------------------- Event Listeners -----------------------------*/
 document.getElementById('btn').addEventListener('click', (evt)=> {
-
 console.log(evt.target)
 })
 
@@ -29,7 +28,7 @@ function init() {
 }
 
 
-Function to handle a button click:
+// Function to handle a button click:
 function handleClick() {
   if (deck1.length > 0) {
     // Randomly select number from total cards remaining in deck 2
@@ -43,7 +42,7 @@ function handleClick() {
   }
 }
 
-Function to render deck state
+// Function to render deck state
 function render() {
   console.log(cardPicked)
   // Remove outline class when first card is picked
@@ -209,7 +208,7 @@ function render() {
 		// 5.6.3) Next, If there's no winner, check if there's a tie:
 
 		// 5.6.4) Set the winner varible to "T" if there are no more nulls in the board array by returning the string "T".
-	  
+
 		// 5.6.5) Otherwise return null.
 
 // 5.7) All state has been updated, so render the state to the page (step 3.3).
