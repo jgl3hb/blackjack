@@ -11,6 +11,7 @@ let playerBank = 500
 /*------------------------ Cached Element References ------------------------*/
 // const deckEl = document.getElementById('deck')
 // const burnpileEl = document.getElementById('burnpile')
+const statusEL = document.getElementById('status')
 // const bet1El = document.getElementById('bet-1')
 // const bet5El = document.getElementById('bet-5')
 // const bet25El = document.getElementById('bet-25')
@@ -25,32 +26,40 @@ let playerBank = 500
 document.getElementById('bet-1').addEventListener('click', (evt)=> {
 	playerbet.innerText = "$1"
 	playerbank.innerText = "Player Bank is = $499"
+	statusEL.remove()
 })
 
 document.getElementById('bet-5').addEventListener('click', (evt)=> {
 	playerbet.innerText = "$5"
 	playerbank.innerText = "Player Bank is = $495"
+	statusEL.remove()
 })
 document.getElementById('bet-25').addEventListener('click', (evt)=> {
 	playerbet.innerText = "$25"
 	playerbank.innerText = "Player Bank is = $475"
+	statusEL.remove()
 })
 document.getElementById('bet-100').addEventListener('click', (evt)=> {
 	playerbet.innerText = "$100"
 	playerbank.innerText = "Player Bank is = $400"
+	statusEL.remove()
 })
 document.getElementById('hit').addEventListener('click', (evt)=> {
 	console.log(evt.target)
+	statusEL.remove()
 })
 document.getElementById('stand').addEventListener('click', (evt)=> {
 	console.log(evt.target)
+	statusEL.remove()
 })
 document.getElementById('deal').addEventListener('click', (evt)=> {
 	console.log(evt.target)
+	statusEL.remove()
 })
 document.getElementById('reset').addEventListener('click', (evt)=> {
 	playerbet.innerText = "Player Bet"
 	playerbank.innerText = "Player Bank is = $500"
+	statusEL.remove()
 })
 
 
@@ -79,6 +88,9 @@ function init() {
 // pElement.innerText = "$1"
 // console.log
 // function bet(){
+
+
+// playerBank = playerBank - bet
 
 // function bet () {
 // let bet1El = document.getElementById("bet-1");
