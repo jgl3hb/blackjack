@@ -61,8 +61,6 @@ h1 {
 }
 
 #dealerhand {
-  
-
 } 
 
 #rules {
@@ -117,19 +115,15 @@ h1 {
 
 
 #bet {
-
 }
 
 #dealreset {
-  
-
 }
 
 #hitstand {
   align-items: center;
   display: flex;
-  flex-direction: center;
-  
+  flex-direction: center;  
 }
 
 
