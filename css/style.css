@@ -20,8 +20,6 @@ html {
 body {
   background-image: url("https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6");
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
 }
 
@@ -39,12 +37,18 @@ h1 {
 }
 
 .container {
-    
+  display: row;
+  flex-direction: column;
+  justify-content: row;
 }
 
-#dealdeck {
+#burnpile {
   display: flex;
-  align-items: center;
+  justify-content: flex-start;
+
+}#deck {
+  display: flex;
+  justify-content: flex-end;
 
 }
 
@@ -104,11 +108,7 @@ h1 {
   font-weight: bold;
 }
 
-.container {
-  display: row;
-  flex-direction: column;
-  justify-content: row;
-}
+
 
 .card {
   margin: 3vh;
@@ -154,7 +154,6 @@ h1 {
     color: gray;
     padding: 10px 20px 0 0;
   }
-
   .card {
     margin: 3vh;
   }
@@ -177,14 +176,12 @@ h1 {
     flex-direction: column;
     align-items: center;
   }
-
   #dealerhand {
     display: flex;
     flex-direction: row;
     justify-content: center;
     min-width: none;
   }
-
   #playerhand {
     display: flex;
     flex-direction: row;
@@ -200,7 +197,6 @@ h1 {
     align-items: center;
     min-width: none;
   }
-
   #dealreset {
     display: flex;
     flex-direction: row;
@@ -208,7 +204,6 @@ h1 {
     align-items: center;
     min-width: none;
   }
-
   
   #hitstand {
     display: flex;
@@ -217,8 +212,6 @@ h1 {
     align-items: center;
     min-width: none;
   }
-
-
   /* bet {
   display: grid;
     text-align: left;
