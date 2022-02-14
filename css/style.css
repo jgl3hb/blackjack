@@ -56,6 +56,9 @@ h1 {
   display: flex;
   justify-content: center;
   font-weight: bold;
+  flex-direction: column;
+  font-size: 12px;
+  
 }
 
 #dealerhand {
@@ -66,24 +69,30 @@ h1 {
     display: flex;
     justify-content: center;
     font-weight: bold;
+    font-size: 20px;
 } 
 
 #playerhand {
   display: row;
   flex-direction: center;
   justify-content: center;
+  
 } 
   
 #playerhandvalue {
   display: flex;
   justify-content: center;
   font-weight: bold;
+  flex-direction: column;
+  font-size: 12px;
 } 
 
 #playerbet {
   display: flex;
   justify-content: center;
   font-weight: bold;
+  flex-direction: column;
+  font-size: 12px;
 }
 
 #bet {
@@ -106,6 +115,8 @@ h1 {
   display: flex;
   justify-content: center;
   font-weight: bold;
+  flex-direction: column;
+  font-size: 12px;
 }
 
 
