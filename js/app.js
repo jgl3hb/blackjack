@@ -6,33 +6,38 @@
 let deck = []
 let burnpile = []
 let cardToRemove, cardPicked
+let playerBank = 500
 
 /*------------------------ Cached Element References ------------------------*/
-let deckEl = document.getElementById('deck')
-let burnpileEl = document.getElementById('burnpile')
-let bet1El = document.getElementById('bet-1')
-let bet5El = document.getElementById('bet-5')
-let bet25El = document.getElementById('bet-25')
-let bet100El = document.getElementById('bet-100')
-let dealEl = document.getElementById('deal')
-let resetEl = document.getElementById('reset')
-let hitEl = document.getElementById('hit')
-let standEl = document.getElementById('stand')
+// const deckEl = document.getElementById('deck')
+// const burnpileEl = document.getElementById('burnpile')
+// const bet1El = document.getElementById('bet-1')
+// const bet5El = document.getElementById('bet-5')
+// const bet25El = document.getElementById('bet-25')
+// const bet100El = document.getElementById('bet-100')
+// const dealEl = document.getElementById('deal')
+// const resetEl = document.getElementById('reset')
+// const hitEl = document.getElementById('hit')
+// const standEl = document.getElementById('stand')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-
 document.getElementById('bet-1').addEventListener('click', (evt)=> {
-	console.log(evt.target)
+	playerbet.innerText = "$1"
+	playerbank.innerText = "Player Bank is = $499"
 })
+
 document.getElementById('bet-5').addEventListener('click', (evt)=> {
-	console.log(evt.target)
+	playerbet.innerText = "$5"
+	playerbank.innerText = "Player Bank is = $495"
 })
 document.getElementById('bet-25').addEventListener('click', (evt)=> {
-	console.log(evt.target)
+	playerbet.innerText = "$25"
+	playerbank.innerText = "Player Bank is = $475"
 })
 document.getElementById('bet-100').addEventListener('click', (evt)=> {
-	console.log(evt.target)
+	playerbet.innerText = "$100"
+	playerbank.innerText = "Player Bank is = $400"
 })
 document.getElementById('hit').addEventListener('click', (evt)=> {
 	console.log(evt.target)
@@ -44,7 +49,8 @@ document.getElementById('deal').addEventListener('click', (evt)=> {
 	console.log(evt.target)
 })
 document.getElementById('reset').addEventListener('click', (evt)=> {
-	console.log(evt.target)
+	playerbet.innerText = "Player Bet"
+	playerbank.innerText = "Player Bank is = $500"
 })
 
 
@@ -58,18 +64,38 @@ init()
 // SIX DECKS
 function init() {
   deck = ["dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02"]
+
+	// statusEl.innerText = "X goes first!"
+	// statusEl.style.color = 'gold'
+	// boardState = [null, null, null, null, null, null, null, null, null]
+	// squaresEl.innerText = ''
+	// isWinner = null
+	// playerTurn = 1
+	// render(boardState)
 }
 
 //Bet function
-bet1El
+// const pElement = document.getElementById('bet-1')
+// pElement.innerText = "$1"
+// console.log
+// function bet(){
+
+// function bet () {
+// let bet1El = document.getElementById("bet-1");
+// playerbet.innerHTML = '$1';
+// 	render();
+// }
+// 	//Allows for bet buttons to add up in bet input field
+
+// }
 
 
 //Shuffle function
-deck.sort(() => Math.random() - .5)
-console.log(deck)
+// deck.sort(() => Math.random() - .5)
+// console.log(deck)
 
 
-// Function to handle a button click:
+// // Function to handle a button click:
 // function handleClick() {
 //   if (deck.length > 0) {
 //     // Randomly select number from total cards remaining in deck 2
@@ -81,7 +107,6 @@ console.log(deck)
 //     // Pass card picked to render function to display
 //     render()
 //   }
-
 // }
 
 // Function to render deck state
@@ -261,4 +286,4 @@ console.log(deck)
 
 	// 6.2) Store the new replay button element
 
-	// 6.3) Do steps 4.1 (initialize the state variables) and 4.2 (render).
+	// 6.3) Do steps 4.1 (initialize the state variables) and 4.2 (render)
