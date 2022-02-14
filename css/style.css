@@ -70,16 +70,9 @@ h1 {
     justify-content: center;
     font-weight: bold;
     font-size: 20px;
+    text-align: center;
 } 
 
-#status {
-  color: red;
-  display: flex;
-  justify-content: center;
-  font-weight: bold;
-  text-decoration: underline;
-  font-size: 30px;
-} 
 
 #playerhand {
   display: row;
@@ -88,6 +81,7 @@ h1 {
   text-align: center;
   
 } 
+
 
 #playerhandvalue {
   display: flex;
@@ -101,13 +95,24 @@ h1 {
   justify-content: center;
   font-weight: bold;
   font-size: 12px;
+  text-align: center;
 }
+
+#status {
+  color: red;
+  justify-content: center;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 30px;
+  text-align: center;
+} 
 
 #playerbank {
   display: flex;
   justify-content: center;
   font-weight: bold;
   font-size: 12px;
+  text-align: center;
 }
 
 

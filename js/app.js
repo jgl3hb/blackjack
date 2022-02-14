@@ -6,7 +6,7 @@
 let deck = []
 let burnpile = []
 let cardToRemove, cardPicked
-let playerBank = 500
+let playerBank = `${500}`
 
 /*------------------------ Cached Element References ------------------------*/
 // const deckEl = document.getElementById('deck')
@@ -24,42 +24,39 @@ const statusEL = document.getElementById('status')
 
 /*----------------------------- Event Listeners -----------------------------*/
 document.getElementById('bet-1').addEventListener('click', (evt)=> {
-	playerbet.innerText = "$1"
+	playerbet.innerText = "Bet $1"
 	playerbank.innerText = "Player Bank is = $499"
-	statusEL.remove()
+	statusEL.innerHTML = "Player Bet is $1, Press Deal"
 })
 
 document.getElementById('bet-5').addEventListener('click', (evt)=> {
-	playerbet.innerText = "$5"
-	playerbank.innerText = "Player Bank is = $495"
-	statusEL.remove()
+	playerbet.innerText = "Bet $5"
+	playerbank.innerText = "Player Bank is $495"
+	statusEL.innerHTML = "Player Bet is $5, Press Deal"
 })
 document.getElementById('bet-25').addEventListener('click', (evt)=> {
-	playerbet.innerText = "$25"
+	playerbet.innerText = "Bet $25"
 	playerbank.innerText = "Player Bank is = $475"
-	statusEL.remove()
+	statusEL.innerHTML = "Player Bet is $25, Press Deal"
 })
 document.getElementById('bet-100').addEventListener('click', (evt)=> {
-	playerbet.innerText = "$100"
+	playerbet.innerText = "Bet $100"
 	playerbank.innerText = "Player Bank is = $400"
-	statusEL.remove()
+	statusEL.innerHTML = "Player Bet is $100, Press Deal"
 })
 document.getElementById('hit').addEventListener('click', (evt)=> {
 	console.log(evt.target)
-	statusEL.remove()
 })
 document.getElementById('stand').addEventListener('click', (evt)=> {
 	console.log(evt.target)
-	statusEL.remove()
 })
 document.getElementById('deal').addEventListener('click', (evt)=> {
 	console.log(evt.target)
-	statusEL.remove()
 })
 document.getElementById('reset').addEventListener('click', (evt)=> {
 	playerbet.innerText = "Player Bet"
 	playerbank.innerText = "Player Bank is = $500"
-	statusEL.remove()
+	statusEL.innerHTML = "Player Make Your Bet"
 })
 
 
