@@ -8,7 +8,20 @@ let playerHand = []
 let dealerHand = []
 let burnpile = []
 let cardToRemove, cardPicked
-let playerBank = `${500}`
+let playerBank = 500
+
+// function bet(amount) {
+// 	if (amount > playerBank) {
+// 		alert("You dont have that much")
+// 		return
+// 	}
+// 	return playerBank -= amount
+// 	playerBank.innerText = "Player bank is = $" + playerBank
+// 	statusEL.innerHTML = "Player bet is $" + amount + ", Press Deal"
+// }
+
+
+
 
 /*------------------------ Cached Element References ------------------------*/
 // const deckEl = document.getElementById('deck')
@@ -28,29 +41,29 @@ const playerHandEl = document.getElementById('deal')
 /*----------------------------- Event Listeners -----------------------------*/
 document.getElementById('bet-1').addEventListener('click', (evt)=> {
 	playerbet.innerText = "Bet $1"
-	playerbank.innerText = "Player Bank is = $499"
+	playerbank.innerText = "Player Bank is = $499" + playerBank
 	statusEL.innerHTML = "Player Bet is $1, Press Deal"
 })
 
 document.getElementById('bet-5').addEventListener('click', (evt)=> {
 	playerbet.innerText = "Bet $5"
-	playerbank.innerText = "Player Bank is $495"
+	playerbank.innerText = "Player Bank is $495" + playerBank
 	statusEL.innerHTML = "Player Bet is $5, Press Deal"
 })
 document.getElementById('bet-25').addEventListener('click', (evt)=> {
 	playerbet.innerText = "Bet $25"
-	playerbank.innerText = "Player Bank is = $475"
+	playerbank.innerText = "Player Bank is = $475" + playerBank
 	statusEL.innerHTML = "Player Bet is $25, Press Deal"
 })
 document.getElementById('bet-100').addEventListener('click', (evt)=> {
-	playerbet.innerText = "Bet $100"
+	playerbet.innerText = "Bet $100" + playerBank
 	playerbank.innerText = "Player Bank is = $400"
 	statusEL.innerHTML = "Player Bet is $100, Press Deal"
 })
-document.getElementById('hit').addEventListener('click', (evt)=> {
+document.getElementById('hit').addEventListener('click', (evt)=> {//flip dealer card over on hit/stand
 	console.log(evt.target)
 })
-document.getElementById('stand').addEventListener('click', (evt)=> {
+document.getElementById('stand').addEventListener('click', (evt)=> {//flip dealer card over on hit/stand
 	console.log(evt.target)
 })
 document.getElementById('deal').addEventListener('click', handleClick)
@@ -60,6 +73,8 @@ document.getElementById('reset').addEventListener('click', (evt)=> {
 	playerbank.innerText = "Player Bank is = $500"
 	statusEL.innerHTML = "Player Make Your Bet"
 })
+
+
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -90,28 +105,46 @@ function init() {
 
 
 //Shuffle function
-deck.sort(() => Math.random() - .5)
+deck1 = [...deck]
+deck1.sort(() => Math.random() - .5)
 console.log(deck)
 
+//deck1 = deck
 
 //Deal Function
 
 
-
-
 // // Function to handle a button click:
 function handleClick() {
-	if (deck.length > 0) {
+	if (deck1.length > 0) {
   // //   // Randomly select number from total cards remaining in deck 2
-    let randIdx = Math.floor(Math.random() * deck.length)
+    let randIdx = Math.floor(Math.random() * deck1.length)
   // //   // Assign card at the random index to a variable
-    let cardPicked = deck.splice(randIdx, 1)[0]
+    let cardPicked = deck1.splice(randIdx, 2)[0]
   // //   // Add card picked to deck 2
     playerHand.push(cardPicked)
   // //   // Pass card picked to render function to display
     render(cardPicked)
 	}
 }	
+
+function(hit) {
+	function pickACard() {
+		const cardPicked = shuffledDeck.splice(0, 1)
+		newCard = cardPicked.join()
+		console.log("newCard: ", newCard)
+		playerHand.push(newCard)
+		console.log("playerHand: ", playerHand)
+		render()
+	}
+	function render() {
+		const playerDiv = document.createElement("div")
+		playerDiv.classList.add("card", "large", newCard)
+		console.log("playDiv: ", playerDiv)
+		playerArea.appendChild(playerDiv)
+		console.log("playerArea: ", playerArea)
+	}
+}
 // Function to render deck state
 function render(cardPicked) {
   // console.log(cardPicked)
@@ -119,7 +152,7 @@ function render(cardPicked) {
   playerHand.classList.remove('outline')
   // Removes previous picked card from deck 2 class list
   if (playerHand.length > 1) {
-    playerBank.classList.remove(cardToRemove)
+    deck.classList.remove(cardToRemove)
   }
   // Store card to be removed next iteration
   let cardToRemove = cardPicked  
