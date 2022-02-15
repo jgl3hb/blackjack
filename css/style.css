@@ -22,72 +22,56 @@ body {
   display: flex;
   justify-content: center;
 }
-
 main {
   display: row;
   flex-direction: center;
-  justify-content: center;
-  
+  justify-content: center; 
 }
-
 h1 {
   display: flex;
   justify-content: center;
   font-weight: bold;
 }
-
 .container {
   display: row;
   flex-direction: column;
   justify-content: row;
 }
-
 #burnpile {
   display: flex;
   justify-content: flex-start;
-
-}#deck {
+}
+#deck {
   display: flex;
   justify-content: flex-end;
-
 }
-
 #dealerhandvalue {
   display: flex;
   justify-content: center;
   font-weight: bold;
   font-size: 12px;
-  
 }
-
 #dealerhand {
 } 
-
 #rules {
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 20px;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
 } 
-
-
 #playerhand {
   display: row;
   flex-direction: center;
   justify-content: center;
   text-align: center;
-  
 } 
-
-
 #playerhandvalue {
   display: flex;
   justify-content: center;
   font-weight: bold;
   font-size: 12px;
-} 
-
+}
 #playerbet {
   display: flex;
   justify-content: center;
@@ -95,7 +79,6 @@ h1 {
   font-size: 12px;
   text-align: center;
 }
-
 #status {
   color: black;
   justify-content: center;
@@ -103,8 +86,7 @@ h1 {
   text-decoration: underline;
   font-size: 30px;
   text-align: center;
-} 
-
+}
 #playerbank {
   display: flex;
   justify-content: center;
@@ -112,38 +94,24 @@ h1 {
   font-size: 12px;
   text-align: center;
 }
-
-
 #bet {
 }
-
 #dealreset {
 }
-
 #hitstand {
   align-items: center;
   display: flex;
   flex-direction: center;  
 }
-
-
-
-
 .card {
   margin: 3vh;
 }
-
-
-
 .card.outline {
   border: 0.15em dashed #202d7a;
 }
-
 .card.shadow {
   box-shadow: 7px 7px 7px 0 rgba(41, 41, 41, 0.95) !important;
 }
-
-
 .btn {
   margin: 3px 3px 3px 3px;
   color: goldenrod;

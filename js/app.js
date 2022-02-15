@@ -139,6 +139,7 @@ function render(cardPicked) {
 //Bet reset to 0
 //Place bet (1, 10, 25, 50) < Player Bank
 //Card 2 - 9 equals card value
+
 //Card 10 & Face cards = 10
 //Ace = 11, unless Player Hand > 21
 //then Ace = 1
