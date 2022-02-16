@@ -60,12 +60,11 @@ document.getElementById('bet-100').addEventListener('click', (evt)=> {
 	playerbank.innerText = "Player Bank is = $400"
 	statusEL.innerHTML = "Player Bet is $100, Press Deal"
 })
-document.getElementById('hit').addEventListener('click', (evt)=> {//flip dealer card over on hit/stand
-	console.log(evt.target)
-})
-document.getElementById('stand').addEventListener('click', (evt)=> {//flip dealer card over on hit/stand
-	console.log(evt.target)
-})
+
+document.getElementById('hit').addEventListener('click', hit)
+
+document.getElementById('stand').addEventListener('click', stand)
+
 document.getElementById('deal').addEventListener('click', initialDeal)
 
 document.getElementById('reset').addEventListener('click', (evt)=> {
@@ -84,6 +83,8 @@ init()
 function init() {
   deck = ["dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02"]
 }
+
+// let cardValue = ["dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02"]
 
 //Bet function
 // const pElement = document.getElementById('bet-1')
@@ -117,14 +118,10 @@ console.log(deck)
 // // Function to handle a button click:
 function handleClick() {
 	if (deck.length > 0) {
-  // //   // Randomly select number from total cards remaining in deck 2
     let randIdx = Math.floor(Math.random() * deck.length)
-  // //   // Assign card at the random index to a variable
     let cardPicked = deck[randIdx]
-  // //   // Add card picked to deck 2
     playerHand.push(cardPicked)
 		console.log(playerHand)
-  // //   // Pass card picked to render function to display
     render(cardPicked)
 	}
 }	
@@ -156,19 +153,28 @@ function initialDeal() {
 	dealToDealer()
 	dealToPlayer() 
 	dealToDealer()
-	console.log(playerHand)
 	console.log(deck)
+	console.log(playerHand)
 	console.log(dealerHand)
 }
 
-// function(hit) {
-// 	function pickACard() {
-// 		const cardPicked = shuffledDeck.splice(0, 1)
-// 		newCard = cardPicked.join()
-// 		console.log("newCard: ", newCard)
-// 		playerHand.push(newCard)
-// 		console.log("playerHand: ", playerHand)
-// 		render()
+function hit() {
+	let playerCard = selectCard()
+	playerHand.push(playerCard)
+	console.log(deck)
+	console.log(playerHand)
+	}
+
+	function stand(){
+		let dealerCard = selectCard()
+		dealerHand.push(dealerCard)
+		console.log(dealerHand)
+}
+
+
+	// }
+
+
 // 	}
 	// function render() {
 	// 	const playerDiv = document.createElement("div")
@@ -179,21 +185,21 @@ function initialDeal() {
 	// }
 
 // Function to render deck state
-function render(cardPicked) {
-  // console.log(cardPicked)
-  // Remove outline class when first card is picked
-  // playerHand.classList.remove('outline')
-  // Removes previous picked card from deck 2 class list
-  if (playerHand.length > 1) {
-    deck.classList.remove(cardToRemove)
-  }
-  // Store card to be removed next iteration
-  let cardToRemove = cardPicked  
-  // Add current card (class name) picked to deck 2 element
-  playerHandEl.classList.add(cardPicked)
-  // Adjust shadow when deck gets above/below halfway full
-  // Remove card back color and add outline when last card is picked
-}
+// function render(cardPicked) {
+//   // console.log(cardPicked)
+//   // Remove outline class when first card is picked
+//   // playerHand.classList.remove('outline')
+//   // Removes previous picked card from deck 2 class list
+//   if (playerHand.length > 1) {
+//     deck.classList.remove(cardToRemove)
+//   }
+//   // Store card to be removed next iteration
+//   let cardToRemove = cardPicked  
+//   // Add current card (class name) picked to deck 2 element
+//   playerHandEl.classList.add(cardPicked)
+//   // Adjust shadow when deck gets above/below halfway full
+//   // Remove card back color and add outline when last card is picked
+// }
 
 // THE RULES
 
