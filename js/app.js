@@ -1,5 +1,7 @@
 /*-------------------------------- Constants --------------------------------*/
-
+const cardValues = {
+  "dA": 1, "dQ": 10, "dK": 10, "dJ": 10,"d10": 10, "d09": 9, "d08": 8, "d07":7,"d06": 6, "d05": 5,"d04": 4,"d03": 3, "d02": 2, "hA": 1, "hQ": 10, "hK": 10, "hJ": 10, "h10": 10, "h09": 9, "h08": 8, "h07": 7, "h06": 6, "h05": 5, "h04": 4, "h03": 3, "h02": 2, "cA": 1, "cQ": 10, "cK": 10, "cJ": 10, "c10": 10, "c09": 9, "c08": 8, "c07": 7, "c06": 6, "c05": 5, "c04": 4, "c03": 3, "c02": 2, "sA": 1, "sQ": 10, "sK": 10, "sJ": 10, "s10": 10, "s09": 9, "s08": 8, "s07": 7, "s06": 6,"s05": 5, "s04": 4, "s03": 3, "s02": 2
+}
 
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -9,6 +11,8 @@ let dealerHand = []
 let burnpile = []
 let cardToRemove, cardPicked
 let playerBank = 500
+
+
 
 // function bet(amount) {
 // 	if (amount > playerBank) {
@@ -74,8 +78,6 @@ document.getElementById('reset').addEventListener('click', (evt)=> {
 })
 
 
-
-
 /*-------------------------------- Functions --------------------------------*/
 init()
 
@@ -83,8 +85,6 @@ init()
 function init() {
   deck = ["dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02"]
 }
-
-// let cardValue = ["dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02"]
 
 //Bet function
 // const pElement = document.getElementById('bet-1')
@@ -100,19 +100,13 @@ function init() {
 // playerbet.innerHTML = '$1';
 // 	render();
 // }
-// 	//Allows for bet buttons to add up in bet input field
-
-// }
+//Allows for bet buttons to add up in bet input field
 
 
 //Shuffle function
 // deck1 = [...deck]
 deck.sort(() => Math.random() - .5)
 console.log(deck)
-
-//deck1 = deck
-
-//Deal Function
 
 
 // // Function to handle a button click:
@@ -140,7 +134,6 @@ function selectCard() {
 function dealToPlayer() {
 	let playerCard = selectCard()
 	playerHand.push(playerCard)
-	
 }
 
 function dealToDealer(){
@@ -156,33 +149,39 @@ function initialDeal() {
 	console.log(deck)
 	console.log(playerHand)
 	console.log(dealerHand)
-}
+}	
+
+function getWinner(){
+	console.log('get winner')
+	if(playerHand === 21 && dealerHand === 21){
+		statusEL.textContent = "Push"
+	} else if(playerHand === 21 && dealerHand !== 21){
+		statusEL.textContent = "Player Wins!"
+	} else if(playerHand !== 21 && dealerHand === 21){ 
+		statusEL.textContent = "Dealer Wins"
+	} else if(playerHand > 21){
+		statusEL.textContent = "Player Bust"
+	}	else if(playerHand < 21 && dealerHand > 21){
+		statusEL.textContent = "Player Wins!"
+		} 
+	}
+
 
 function hit() {
 	let playerCard = selectCard()
 	playerHand.push(playerCard)
 	console.log(deck)
 	console.log(playerHand)
+		//player loses		
 	}
 
 	function stand(){
 		let dealerCard = selectCard()
-		dealerHand.push(dealerCard)
+		dealerHand.push(dealerCard) 
+			if(dealerHand < 17)
 		console.log(dealerHand)
 }
 
-
-	// }
-
-
-// 	}
-	// function render() {
-	// 	const playerDiv = document.createElement("div")
-	// 	playerDiv.classList.add("card", "large", newCard)
-	// 	console.log("playDiv: ", playerDiv)
-	// 	playerArea.appendChild(playerDiv)
-	// 	console.log("playerArea: ", playerArea)
-	// }
 
 // Function to render deck state
 // function render(cardPicked) {
