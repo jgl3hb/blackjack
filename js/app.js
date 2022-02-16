@@ -66,7 +66,7 @@ document.getElementById('hit').addEventListener('click', (evt)=> {//flip dealer 
 document.getElementById('stand').addEventListener('click', (evt)=> {//flip dealer card over on hit/stand
 	console.log(evt.target)
 })
-document.getElementById('deal').addEventListener('click', handleClick)
+document.getElementById('deal').addEventListener('click', initialDeal)
 
 document.getElementById('reset').addEventListener('click', (evt)=> {
 	playerbet.innerText = "Player Bet"
@@ -105,8 +105,8 @@ function init() {
 
 
 //Shuffle function
-deck1 = [...deck]
-deck1.sort(() => Math.random() - .5)
+// deck1 = [...deck]
+deck.sort(() => Math.random() - .5)
 console.log(deck)
 
 //deck1 = deck
@@ -116,40 +116,73 @@ console.log(deck)
 
 // // Function to handle a button click:
 function handleClick() {
-	if (deck1.length > 0) {
+	if (deck.length > 0) {
   // //   // Randomly select number from total cards remaining in deck 2
-    let randIdx = Math.floor(Math.random() * deck1.length)
+    let randIdx = Math.floor(Math.random() * deck.length)
   // //   // Assign card at the random index to a variable
-    let cardPicked = deck1.splice(randIdx, 2)[0]
+    let cardPicked = deck[randIdx]
   // //   // Add card picked to deck 2
     playerHand.push(cardPicked)
+		console.log(playerHand)
   // //   // Pass card picked to render function to display
     render(cardPicked)
 	}
 }	
 
-function(hit) {
-	function pickACard() {
-		const cardPicked = shuffledDeck.splice(0, 1)
-		newCard = cardPicked.join()
-		console.log("newCard: ", newCard)
-		playerHand.push(newCard)
-		console.log("playerHand: ", playerHand)
-		render()
-	}
-	function render() {
-		const playerDiv = document.createElement("div")
-		playerDiv.classList.add("card", "large", newCard)
-		console.log("playDiv: ", playerDiv)
-		playerArea.appendChild(playerDiv)
-		console.log("playerArea: ", playerArea)
-	}
+function selectCard() {
+	if (deck.length > 0) {
+			let randIdx = Math.floor(Math.random() * deck.length)
+			let cardPicked = deck[randIdx]
+			deck.splice(randIdx, 1)			
+			return cardPicked
+		} else {
+			return 
+		}
 }
+
+function dealToPlayer() {
+	let playerCard = selectCard()
+	playerHand.push(playerCard)
+	
+}
+
+function dealToDealer(){
+	let dealerCard = selectCard()
+	dealerHand.push(dealerCard)
+}
+
+function initialDeal() {
+	dealToPlayer() 
+	dealToDealer()
+	dealToPlayer() 
+	dealToDealer()
+	console.log(playerHand)
+	console.log(deck)
+	console.log(dealerHand)
+}
+
+// function(hit) {
+// 	function pickACard() {
+// 		const cardPicked = shuffledDeck.splice(0, 1)
+// 		newCard = cardPicked.join()
+// 		console.log("newCard: ", newCard)
+// 		playerHand.push(newCard)
+// 		console.log("playerHand: ", playerHand)
+// 		render()
+// 	}
+	// function render() {
+	// 	const playerDiv = document.createElement("div")
+	// 	playerDiv.classList.add("card", "large", newCard)
+	// 	console.log("playDiv: ", playerDiv)
+	// 	playerArea.appendChild(playerDiv)
+	// 	console.log("playerArea: ", playerArea)
+	// }
+
 // Function to render deck state
 function render(cardPicked) {
   // console.log(cardPicked)
   // Remove outline class when first card is picked
-  playerHand.classList.remove('outline')
+  // playerHand.classList.remove('outline')
   // Removes previous picked card from deck 2 class list
   if (playerHand.length > 1) {
     deck.classList.remove(cardToRemove)
