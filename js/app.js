@@ -49,7 +49,7 @@ const bank = document.getElementById('playerBank')
 
 bet1Btn.addEventListener('click', () => {
 	bet.innerText = "Bet $1"
-  parseInt(bank.innerText) = parseInt(bank.textContent) - parseInt(bet1Btn.value)
+  bank.innerText = parseInt(bank.textContent) - parseInt(bet1Btn.value)
 }) 
 
 
