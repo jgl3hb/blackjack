@@ -1,6 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
 const cardValues = {
-  "dA": 1, "dQ": 10, "dK": 10, "dJ": 10,"d10": 10, "d09": 9, "d08": 8, "d07":7,"d06": 6, "d05": 5,"d04": 4,"d03": 3, "d02": 2, "hA": 1, "hQ": 10, "hK": 10, "hJ": 10, "h10": 10, "h09": 9, "h08": 8, "h07": 7, "h06": 6, "h05": 5, "h04": 4, "h03": 3, "h02": 2, "cA": 1, "cQ": 10, "cK": 10, "cJ": 10, "c10": 10, "c09": 9, "c08": 8, "c07": 7, "c06": 6, "c05": 5, "c04": 4, "c03": 3, "c02": 2, "sA": 1, "sQ": 10, "sK": 10, "sJ": 10, "s10": 10, "s09": 9, "s08": 8, "s07": 7, "s06": 6,"s05": 5, "s04": 4, "s03": 3, "s02": 2
+  "dA": 1, "dK": 10, "dQ": 10, "dJ": 10, "d10": 10, "d09": 9, "d08": 8, "d07":7,"d06": 6, "d05": 5,"d04": 4,"d03": 3, "d02": 2, "hA": 1, "hK": 10, "hQ": 10, "hJ": 10, "h10": 10, "h09": 9, "h08": 8, "h07": 7, "h06": 6, "h05": 5, "h04": 4, "h03": 3, "h02": 2, "cA": 1, "cK": 10, "cQ": 10, "cJ": 10, "c10": 10, "c09": 9, "c08": 8, "c07": 7, "c06": 6, "c05": 5, "c04": 4, "c03": 3, "c02": 2, "sA": 1, "sK": 10, "sQ": 10, "sJ": 10, "s10": 10, "s09": 9, "s08": 8, "s07": 7, "s06": 6,"s05": 5, "s04": 4, "s03": 3, "s02": 2
 }
 
 
@@ -11,7 +11,8 @@ let dealerHand = []
 let burnpile = []
 let cardToRemove, cardPicked
 let playerBank = 500
-
+let playerHandValue = 0
+let dealerHandValue = 0
 
 
 // function bet(amount) {
@@ -36,11 +37,10 @@ const bet5El = document.getElementById('bet-5')
 const bet25El = document.getElementById('bet-25')
 const bet100El = document.getElementById('bet-100')
 const dealEl = document.getElementById('deal')
-// const resetEl = document.getElementById('reset')
-// const hitEl = document.getElementById('hit')
-// const standEl = document.getElementById('stand')
+const resetEl = document.getElementById('reset')
+const hitEl = document.getElementById('hit')
+const standEl = document.getElementById('stand')
 const playerHandEl = document.getElementById('deal')
-
 
 /*----------------------------- Event Listeners -----------------------------*/
 document.getElementById('bet-1').addEventListener('click', (evt)=> {
@@ -134,7 +134,13 @@ function selectCard() {
 function dealToPlayer() {
 	let playerCard = selectCard()
 	playerHand.push(playerCard)
+// 	// iterate thru cardValues
+// if playerCard === cardValues[i]
+// 	// take object value of suit, 
+// 	// save object to a variable
+// 	// add variable to playerHandValue
 }
+
 
 function dealToDealer(){
 	let dealerCard = selectCard()
@@ -151,20 +157,26 @@ function initialDeal() {
 	console.log(dealerHand)
 }	
 
-function getWinner(){
-	console.log('get winner')
-	if(playerHand === 21 && dealerHand === 21){
-		statusEL.textContent = "Push"
-	} else if(playerHand === 21 && dealerHand !== 21){
-		statusEL.textContent = "Player Wins!"
-	} else if(playerHand !== 21 && dealerHand === 21){ 
-		statusEL.textContent = "Dealer Wins"
-	} else if(playerHand > 21){
-		statusEL.textContent = "Player Bust"
-	}	else if(playerHand < 21 && dealerHand > 21){
-		statusEL.textContent = "Player Wins!"
-		} 
-	}
+// function getWinner(){
+// 	console.log('get winner')
+// 	if(playerHand === 21 && dealerHand === 21){
+// 		statusEL.textContent = "Push"
+// 		console.log('Push')
+// 	} else if(playerHand === 21 && dealerHand !== 21){
+// 		statusEL.textContent = "Player Wins!"
+// 		console.log('Player Wins')
+// 	} else if(playerHand !== 21 && dealerHand === 21){ 
+// 		statusEL.textContent = "Dealer Wins"
+// 		console.log('Dealer wins')
+// 	} else if(playerHand > 21){
+// 		statusEL.textContent = "Player Bust"
+// 		console.log('Player Bust')
+// 	}	else if(playerHand < 21 && dealerHand > 21){
+// 		statusEL.textContent = "Player Wins!"
+// 		console.log('Player wins')
+// 		render()
+// 		} 
+// 	}
 
 
 function hit() {
@@ -178,10 +190,14 @@ function hit() {
 	function stand(){
 		let dealerCard = selectCard()
 		dealerHand.push(dealerCard) 
-			if(dealerHand < 17)
+			// if(dealerHand < 17)
 		console.log(dealerHand)
 }
 
+// $$$$$$$$$        ACE LOGIC                   $$$$$$$$$$$$$$
+//ACE =1
+//if playerHand has < 2 ACE Card and playerHandValue is > 12, add 10
+//if playerHand has 4 CARDS TOTAL 3 ACE & 8 = BLACKJACK
 
 // Function to render deck state
 // function render(cardPicked) {
@@ -253,112 +269,3 @@ function hit() {
 
 
 
-
-
-
-// 1) Define the required variables used to track the state of the game:
-  // None of these variables will need to hold a value when they are defined
-
-	// 1.1) Use an array to represent the squares on the board.    
-
-	// 1.2) Use a turn variable to track whose turn it is.
-
-	// 1.3) Use a winner variable to represent three different game states:
-	  // a player that won
-	  // a tie has occured
-	  // or a game that is still in play.
-
-// 2) Store cached element references on the page that will be accessed in code more than once in variables to make code more concise, readable, and performant:
-	
-	// 2.1) Store the 9 elements that represent the squares on the page.
-	  // You may want to give each square a class name in your HTML to make this easier!
-
-	// 2.2) Store the element that displays the game status on the page.
-
-// 3) Upon loading, the app should:
-
-	// 3.1) Call an initialize function
-
-	// 3.2) That initialize function should initialize the state variables:
-	  // 3.2.1) Initialize the board array to 9 nulls to represent empty squares. 
-	    // The 9 elements will "map" to each square.
-	    // Index 0 represents the top-left square.
-	    // Index 1 represents the top-middle square.
-			// So on, continuing through the entire board until...
-	    // Index 8 maps to the bottom-right square.
-	  // 3.2.2) Initialize whose turn it is to 1 (player 'X'). 
-	    // Player 'O' will be represented by -1.
-	  // 3.2.3) Initialize the winner variable to null.
-	    // This represents that there is no winner or tie yet. 
-	    // The winner variable will hold the player value (1 or -1) if there's a winner. 
-	    // The winner will hold a 'T' if there's a tie.
-	  // 3.2.4) Render those state variables to the page by calling a render function.
-
-	// 3.3) The render function should:
-	  // 3.3.1) Loop over the board array (which represents the squares on the page), and for each iteration:
-		  // 3.3.1.1) Use the index of the iteration to access the square in the squares array that corresponds with the current cell being iterated over in the board array
-		  // 3.3.1.2) Style that square however you wish dependant on the value contained in the current cell being iterated over (-1, 1, or null)
-	  // 3.3.2) Render a message reflecting the currrent game state:
-	    // 3.3.2.1) If winner has a value other than null (game still in progress), render whose turn it is.
-	      // Hint: Maybe use a ternary inside of a template literal here?
-	    // 3.3.2.2) If winner is equal to 'T' (tie), render a tie message.
-	    // 3.3.2.3) Otherwise, render a congratulatory message to which player has won.
-	      // Hint (again): Maybe use a ternary inside a template literal here
-
-		// 3.4) After completing this step, you should be able to manually change the values held in the board array in the initialization function and see the style of the corresponding square change on your page.
-
-// 4) Define the required constants:
-
-	// 4.1) Define the 8 possible winning combinations as an array of arrays.
-	  // Each array will contain three indexes of the board that make a winner if they hold the same player value. 
-		// If you are having trouble with this step, feel free to check out the winningCombos array in the solution code. 
-
-// 5) Next, the app should wait for the user to click a square and call a handleClick function
-  // the handleClick function will...
-
-	// 5.1) Obtain the index of the square that was clicked by:
-	  // 5.1.1) "Extracting" the index from an id assigned to the element in the HTML 
-		// Hint: Each id seems to correspond with an index in our board array. How could these be used if
-		// we cleaned them up a bit?
-
-	// 5.2) If the board has a value at the index, immediately return because that square is already taken.
-
-	// 5.3) If winner is not null, immediately return because the game is over.
-
-	// 5.4) Update the board array at the index with the value of turn.
-
-	// 5.5) Change the turn by multiplying turn by -1 (this flips a 1 to -1, and vice-versa).
-
-	// 5.6) Set the winner variable if there's a winner by calling a new function: getWinner.
-	  // The getWinner function will...
-
-	  // 5.6.1) There are a couple methods you can use to find out if there is a winner.
-	   // This is the first, more elegant way that takes advantage of the winningCombos array you wrote above in step 4.
-	   // The 5.6.2 step is a little simpler to comprehend, but you'll need to write a lot more code.
-	   // The 5.6.2 step also won't take advantage of the winningCombos array, but using it as a reference will help you build a solution.
-	   // Choose only one path.
-		  // 5.6.1.1) Loop through the each of the winning combination arrays defined.
-		  // 5.6.1.2) Total up the three board positions using the three indexes in the current combo.
-		  // 5.6.1.3) Convert the total to an absolute value (convert any negative total to positive).
-		  // 5.6.1.4) If the total equals 3, we have a winner! Set the winner variable to the board's value at the index specified by the first index of that winning combination's array by returning that value.
-
-		// 5.6.2) This solution is less elegant, but might be easier to write on your own if you're struggling with the 5.6.1.X pseudocode.
-		  // 5.6.2.1) For each one of the winning combinations you wrote in step 4, find the total of each winning combination.
-		  // 5.6.2.2) Convert the total to an absolute value (convert any negative total to positive)
-		  // 5.6.2.3) If the total equals 3, we have a winner! Set the winner variable to the board's value at the index specified by the first index of that winning combination's array by returning that value.
-
-		// 5.6.3) Next, If there's no winner, check if there's a tie:
-
-		// 5.6.4) Set the winner varible to "T" if there are no more nulls in the board array by returning the string "T".
-
-		// 5.6.5) Otherwise return null.
-
-// 5.7) All state has been updated, so render the state to the page (step 3.3).
-
-// 6) Handle a player clicking the replay button:
-
-	// 6.1) Add a replay button to the HTML document
-
-	// 6.2) Store the new replay button element
-
-	// 6.3) Do steps 4.1 (initialize the state variables) and 4.2 (render)
