@@ -1,6 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
 
-
 /*---------------------------- Variables (state) ----------------------------*/
 let deck = []
 let playerHand = []
@@ -16,21 +15,12 @@ let dealerHandValue = 0
 // 		statusEL.innerText = "Not Enough $$$"
 // 		console.log(playerBet)
 // 	}
-
 //Bet function
 // const pElement = document.getElementById('bet-1')
 // pElement.innerText = "$1"
 // console.log
 // function bet(){
-
 // bank = bank - bet
-
-// function bet () {
-// let bet1El = document.getElementById("bet-1");
-// bet.innerHTML = '$1';
-// 	render();
-// }
-//Allows for bet buttons to add up in bet input field
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -47,6 +37,7 @@ const hitBtn = document.getElementById('hit')
 const standBtn = document.getElementById('stand')
 const playerHandEl = document.getElementById('deal')
 const bank = document.getElementById('playerBank')
+const playercard = document.getElementById('playercard')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -97,10 +88,6 @@ init()
 function init() {
   deck = ["dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02"]
 }
-
-
-
-
 //Shuffle function
 // deck1 = [...deck]
 deck.sort(() => Math.random() - .5)
@@ -139,24 +126,38 @@ function dealToDealer(){
 	dealerHand.push(dealerCard)
 }
 
-	
 function initialDeal() {
 	dealToPlayer() 
 	dealToDealer()
 	dealToPlayer() 
 	dealToDealer()
+	let p1score = computeHandTotal(playerHand)
+	let d1score = computeHandTotal(dealerHand)
+	// pcard.remove('card large outline')
+	// pcard.add('playerCard')
+	// pcard.remove('card large outline')
+	// pcard.add('playerCard')
+	// console.log(playerCard)
+	// dcard.remove('card large outline')
+	// dcard.add('playerCard')
+	// dcard.remove('card large outline')
+	// dcard.add('playerCard')
 	console.log(deck)
 	console.log(playerHand)
 	console.log(dealerHand)
+	console.log(p1score)
+	console.log(d1score)
 }	
 
-function checkHandVal(hand) {
-	handVal = 0
-	hand.forEach(card => {
-		handVal += cardLookup(card)
-	})
+
+function computeHandTotal(hand) {
+  let total = 0
+  hand.forEach(card => {
+    total += cardLookup(card)
+  })
+  return total
 }
-	
+
 function cardLookup(card) {
   let cardValue;
   if (card === "dA" || card === "hA" || card ==="cA" || card === "sA"){
@@ -195,16 +196,16 @@ function cardLookup(card) {
   return cardValue;
 }
 	
-	// function hit(hand) {
-	// 	hand.push(newCard)
-	// 	checkHandVal()
-	// }
-	
 function hit() {
 	let playerCard = selectCard()
 	playerHand.push(playerCard)
+	let p1score = computeHandTotal(playerHand)
+	let d1score = computeHandTotal(dealerHand)
 	console.log(deck)
 	console.log(playerHand)
+	console.log(p1score)
+	console.log(d1score)
+
 	//player loses		
 }
 	
@@ -215,7 +216,40 @@ function stand(){
 	console.log(dealerHand)
 }
 	
-function getWinner(){
+function renderBust(){
+	if(p1score > 21){
+		statusEL.textContent = "Player Bust"
+		console.log('Player Bust')
+	} else if (dealerHand > 21){
+		statusEL.textContent = "Dealer Bust, Player Wins!"
+		console.log('Dealer Bust')
+	}
+}
+
+function renderBlackjack(){
+	if(playerHand === 21 && dealerHand === 21){
+		statusEL.textContent = "Push"
+		console.log('Push')
+	} else if(playerHand === 21 && dealerHand !== 21){
+			statusEL.textContent = "Player Wins!"
+			console.log('Player Wins')
+		} else if(playerHand !== 21 && dealerHand === 21){ 
+			statusEL.textContent = "Dealer Wins"
+			console.log('Dealer wins')
+	}
+}
+
+function renderWin(){
+	if (playerHand > dealerHand && playerHand < 21){
+	statusEL.textContent = "Player Wins!";
+	console.log('Player wins')
+	} elseif (dealerHand > playerHand && playerHand < 21);{
+	statusEL.textContent = "Dealer Wins";
+	console.log('Dealer wins')
+	}
+}
+
+function checkForBlackjack(){
 	console.log('get winner')
 	if(playerHand === 21 && dealerHand === 21){
 	statusEL.textContent = "Push"

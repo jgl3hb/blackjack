@@ -51,7 +51,7 @@ h1 {
   font-weight: bold;
   font-size: 12px;
 }
-#dealerhand {
+#dealercard {
 } 
 #rules {
   display: flex;
@@ -60,7 +60,7 @@ h1 {
   font-size: 20px;
   text-align: center;
 } 
-#playerhand {
+#playercard {
   display: row;
   flex-direction: center;
   justify-content: center;
