@@ -214,6 +214,13 @@ function stand(){
 	dealerHand.push(dealerCard) 
 	// if(dealerHand < 17)
 	console.log(dealerHand)
+	let p1score = computeHandTotal(playerHand)
+	let d1score = computeHandTotal(dealerHand)
+	console.log(deck)
+	console.log(playerHand)
+	console.log(p1score)
+	console.log(d1score)
+
 }
 	
 function renderBust(){
