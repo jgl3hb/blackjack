@@ -6,8 +6,7 @@ let playerHand = []
 let dealerHand = []
 let burnpile = []
 let cardToRemove, cardPicked
-let playerHandValue = 0
-let dealerHandValue = 0
+
 
 
 // function playerBank(bet) {
@@ -37,7 +36,8 @@ const hitBtn = document.getElementById('hit')
 const standBtn = document.getElementById('stand')
 const playerHandEl = document.getElementById('deal')
 const bank = document.getElementById('playerBank')
-const playercard = document.getElementById('playercard')
+// const playercard = document.getElementById('playercard')
+
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -131,13 +131,14 @@ function initialDeal() {
 	dealToDealer()
 	dealToPlayer() 
 	dealToDealer()
-	let p1score = computeHandTotal(playerHand)
-	let d1score = computeHandTotal(dealerHand)
+	let playerScore = computeHandTotal(playerHand)
+	let dealerScore = computeHandTotal(dealerHand)
+	
 	// pcard.remove('card large outline')
 	// pcard.add('playerCard')
 	// pcard.remove('card large outline')
 	// pcard.add('playerCard')
-	// console.log(playerCard)
+	// console.log('playerCard')
 	// dcard.remove('card large outline')
 	// dcard.add('playerCard')
 	// dcard.remove('card large outline')
@@ -145,9 +146,11 @@ function initialDeal() {
 	console.log(deck)
 	console.log(playerHand)
 	console.log(dealerHand)
-	console.log(p1score)
-	console.log(d1score)
+	console.log(playerScore)
+	console.log(dealerScore)
 }	
+
+document.createElement
 
 
 function computeHandTotal(hand) {
@@ -199,12 +202,12 @@ function cardLookup(card) {
 function hit() {
 	let playerCard = selectCard()
 	playerHand.push(playerCard)
-	let p1score = computeHandTotal(playerHand)
-	let d1score = computeHandTotal(dealerHand)
+	let playerScore = computeHandTotal(playerHand)
+	let dealerScore = computeHandTotal(dealerHand)
 	console.log(deck)
 	console.log(playerHand)
-	console.log(p1score)
-	console.log(d1score)
+	console.log(playerScore)
+	console.log(dealerScore)
 
 	//player loses		
 }
@@ -212,45 +215,47 @@ function hit() {
 function stand(){
 	let dealerCard = selectCard()
 	dealerHand.push(dealerCard) 
-	// if(dealerHand < 17)
 	console.log(dealerHand)
-	let p1score = computeHandTotal(playerHand)
-	let d1score = computeHandTotal(dealerHand)
+	let playerScore = computeHandTotal(playerHand)
+	let dealerScore = computeHandTotal(dealerHand)
+		// if(dealerHand < 17)
+	// if(dealerScore > 16)
+	// getWinner
 	console.log(deck)
 	console.log(playerHand)
-	console.log(p1score)
-	console.log(d1score)
+	console.log(playerScore)
+	console.log(dealerScore)
 
 }
 	
 function renderBust(){
-	if(p1score > 21){
+	if(playerScore > 21){
 		statusEL.textContent = "Player Bust"
 		console.log('Player Bust')
-	} else if (dealerHand > 21){
+	} else if (dealerScore > 21){
 		statusEL.textContent = "Dealer Bust, Player Wins!"
 		console.log('Dealer Bust')
 	}
 }
 
 function renderBlackjack(){
-	if(playerHand === 21 && dealerHand === 21){
+	if(playerScore === 21 && dealerScore === 21){
 		statusEL.textContent = "Push"
 		console.log('Push')
-	} else if(playerHand === 21 && dealerHand !== 21){
+	} else if(playerScore === 21 && dealerScore !== 21){
 			statusEL.textContent = "Player Wins!"
 			console.log('Player Wins')
-		} else if(playerHand !== 21 && dealerHand === 21){ 
+		} else if(playerScore !== 21 && dealerScore === 21){ 
 			statusEL.textContent = "Dealer Wins"
 			console.log('Dealer wins')
 	}
 }
 
 function renderWin(){
-	if (playerHand > dealerHand && playerHand < 21){
+	if (playerScore > dealerScore && playerScore < 21){
 	statusEL.textContent = "Player Wins!";
 	console.log('Player wins')
-	} elseif (dealerHand > playerHand && playerHand < 21);{
+	} elseif (dealerScore > playerScore && playerScore < 21);{
 	statusEL.textContent = "Dealer Wins";
 	console.log('Dealer wins')
 	}
@@ -258,24 +263,30 @@ function renderWin(){
 
 function checkForBlackjack(){
 	console.log('get winner')
-	if(playerHand === 21 && dealerHand === 21){
+	if(playerScore === 21 && dealerScore === 21){
 	statusEL.textContent = "Push"
 	console.log('Push')
-	} else if(playerHand === 21 && dealerHand !== 21){
+	} else if(playerScore === 21 && dealerScore !== 21){
 		statusEL.textContent = "Player Wins!"
 		console.log('Player Wins')
-	} else if(playerHand !== 21 && dealerHand === 21){ 
+	} else if(playerScore !== 21 && dealerScore === 21){ 
 		statusEL.textContent = "Dealer Wins"
 		console.log('Dealer wins')
-	} else if(playerHand > 21){
+	} else if(playerScore > 21){
 		statusEL.textContent = "Player Bust"
 		console.log('Player Bust')
-	}	else if(playerHand < 21 && dealerHand > 21){
+	}	else if(playerScore < 21 && dealerScore > 21){
 		statusEL.textContent = "Player Wins!"
 		console.log('Player wins')
 		render()
 	} 
 }
+//Push cards to burnpile
+// function gameOver {
+// 	dealerHand.push(burnpile)
+// 	playerHand.push(burnpile)
+// }
+
 
 // $$$$$$$$$        ACE LOGIC                   $$$$$$$$$$$$$$
 //ACE =1
@@ -283,11 +294,7 @@ function checkForBlackjack(){
 //if playerHand has 4 CARDS TOTAL 3 ACE & 8 = BLACKJACK
 
 
-//Push cards to burnpile
-// function gameOver {
-// 	dealerHand.push(burnpile)
-// 	playerHand.push(burnpile)
-// }
+
 
 
 
