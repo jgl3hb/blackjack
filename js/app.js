@@ -52,22 +52,37 @@ bet1Btn.addEventListener('click', () => {
   bank.innerText = parseInt(bank.textContent) - parseInt(bet1Btn.value)
 }) 
 
-
-bet5Btn.addEventListener('click', (evt)=> {
+bet5Btn.addEventListener('click', () => {
 	bet.innerText = "Bet $5"
-	bank.innerText = "Player Bank is $495" - bet
-	statusEL.innerHTML = "Player Bet is $5, Press Deal"
-})
-bet25Btn.addEventListener('click', (evt)=> {
+  bank.innerText = parseInt(bank.textContent) - parseInt(bet5Btn.value)
+}) 
+
+bet25Btn.addEventListener('click', () => {
 	bet.innerText = "Bet $25"
-	bank.innerText = "Player Bank is = $475"
-	statusEL.innerHTML = "Player Bet is $25, Press Deal"
-})
-bet100Btn.addEventListener('click', (evt)=> {
+  bank.innerText = parseInt(bank.textContent) - parseInt(bet25Btn.value)
+}) 
+
+bet100Btn.addEventListener('click', () => {
 	bet.innerText = "Bet $100"
-	bank.innerText = "Player Bank is = $400" - bet
-	statusEL.innerHTML = "Player Bet is $100, Press Deal"
-})
+  bank.innerText = parseInt(bank.textContent) - parseInt(bet100Btn.value)
+}) 
+
+
+// bet5Btn.addEventListener('click', (evt)=> {
+// 	bet.innerText = "Bet $5"
+// 	bank.innerText = "Player Bank is $495" - bet
+// 	statusEL.innerHTML = "Player Bet is $5, Press Deal"
+// })
+// bet25Btn.addEventListener('click', (evt)=> {
+// 	bet.innerText = "Bet $25"
+// 	bank.innerText = "Player Bank is = $475"
+// 	statusEL.innerHTML = "Player Bet is $25, Press Deal"
+// })
+// bet100Btn.addEventListener('click', (evt)=> {
+// 	bet.innerText = "Bet $100"
+// 	bank.innerText = "Player Bank is = $400" - bet
+// 	statusEL.innerHTML = "Player Bet is $100, Press Deal"
+// })
 
 document.getElementById('hit').addEventListener('click', hit)
 
