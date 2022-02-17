@@ -1,7 +1,4 @@
 /*-------------------------------- Constants --------------------------------*/
-const cardValues = {
-  "dA": 1, "dK": 10, "dQ": 10, "dJ": 10, "d10": 10, "d09": 9, "d08": 8, "d07":7,"d06": 6, "d05": 5,"d04": 4,"d03": 3, "d02": 2, "hA": 1, "hK": 10, "hQ": 10, "hJ": 10, "h10": 10, "h09": 9, "h08": 8, "h07": 7, "h06": 6, "h05": 5, "h04": 4, "h03": 3, "h02": 2, "cA": 1, "cK": 10, "cQ": 10, "cJ": 10, "c10": 10, "c09": 9, "c08": 8, "c07": 7, "c06": 6, "c05": 5, "c04": 4, "c03": 3, "c02": 2, "sA": 1, "sK": 10, "sQ": 10, "sJ": 10, "s10": 10, "s09": 9, "s08": 8, "s07": 7, "s06": 6,"s05": 5, "s04": 4, "s03": 3, "s02": 2
-}
 
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -19,6 +16,21 @@ let dealerHandValue = 0
 // 		statusEL.innerText = "Not Enough $$$"
 // 		console.log(playerBet)
 // 	}
+
+//Bet function
+// const pElement = document.getElementById('bet-1')
+// pElement.innerText = "$1"
+// console.log
+// function bet(){
+
+// bank = bank - bet
+
+// function bet () {
+// let bet1El = document.getElementById("bet-1");
+// bet.innerHTML = '$1';
+// 	render();
+// }
+//Allows for bet buttons to add up in bet input field
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -40,27 +52,28 @@ const bank = document.getElementById('playerBank')
 /*----------------------------- Event Listeners -----------------------------*/
 bet1Btn.addEventListener('click', () => {
 	bet.innerText = "Bet $1"
-  bank.innerText = parseInt(bank.textContent) - parseInt(bet1Btn.value)
+  bank.innerText = `$${parseInt(bank.textContent) - parseInt(bet1Btn.value)}`
 	statusEL.innerHTML = "Player Bet is $1, Press Deal"
 	bet1Btn.remove(),bet5Btn.remove(),bet25Btn.remove(),bet100Btn.remove()
 }) 
 
 bet5Btn.addEventListener('click', () => {
 	bet.innerText = "Bet $5"
-  bank.innerText = parseInt(bank.textContent) - parseInt(bet5Btn.value)
+	bank.innerText = `$${parseInt(bank.textContent) - parseInt(bet5Btn.value)}`
 	statusEL.innerHTML = "Player Bet is $5, Press Deal"
+	bet1Btn.remove(),bet5Btn.remove(),bet25Btn.remove(),bet100Btn.remove()
 }) 
 
 bet25Btn.addEventListener('click', () => {
 	bet.innerText = "Bet $25"
-  bank.innerText = parseInt(bank.textContent) - parseInt(bet25Btn.value)
+  bank.innerText = `$${parseInt(bank.textContent) - parseInt(bet25Btn.value)}`
 	statusEL.innerHTML = "Player Bet is $25, Press Deal"
 	bet1Btn.remove(),bet5Btn.remove(),bet25Btn.remove(),bet100Btn.remove()
 }) 
 
 bet100Btn.addEventListener('click', () => {
 	bet.innerText = "Bet $100"
-  bank.innerText = parseInt(bank.textContent) - parseInt(bet100Btn.value)
+	bank.innerText = `$${parseInt(bank.textContent) - parseInt(bet100Btn.value)}`
 	statusEL.innerHTML = "Player Bet is $100, Press Deal"
 	bet1Btn.remove(),bet5Btn.remove(),bet25Btn.remove(),bet100Btn.remove()
 }) 
@@ -85,21 +98,7 @@ function init() {
   deck = ["dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02","dA","dQ","dK","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02","hA","hQ","hK","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02","cA","cQ","cK","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02","sA","sQ","sK","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02"]
 }
 
-//Bet function
-// const pElement = document.getElementById('bet-1')
-// pElement.innerText = "$1"
-// console.log
-// function bet(){
 
-
-// bank = bank - bet
-
-// function bet () {
-// let bet1El = document.getElementById("bet-1");
-// bet.innerHTML = '$1';
-// 	render();
-// }
-//Allows for bet buttons to add up in bet input field
 
 
 //Shuffle function
@@ -128,19 +127,19 @@ function selectCard() {
 		} else {
 			return 
 		}
-}
-
+	}
+	
 function dealToPlayer() {
 	let playerCard = selectCard()
 	playerHand.push(playerCard)
 }
-
-
+	
 function dealToDealer(){
 	let dealerCard = selectCard()
 	dealerHand.push(dealerCard)
 }
 
+	
 function initialDeal() {
 	dealToPlayer() 
 	dealToDealer()
@@ -151,42 +150,97 @@ function initialDeal() {
 	console.log(dealerHand)
 }	
 
-// function getWinner(){
-// 	console.log('get winner')
-// 	if(playerHand === 21 && dealerHand === 21){
-// 		statusEL.textContent = "Push"
-// 		console.log('Push')
-// 	} else if(playerHand === 21 && dealerHand !== 21){
-// 		statusEL.textContent = "Player Wins!"
-// 		console.log('Player Wins')
-// 	} else if(playerHand !== 21 && dealerHand === 21){ 
-// 		statusEL.textContent = "Dealer Wins"
-// 		console.log('Dealer wins')
-// 	} else if(playerHand > 21){
-// 		statusEL.textContent = "Player Bust"
-// 		console.log('Player Bust')
-// 	}	else if(playerHand < 21 && dealerHand > 21){
-// 		statusEL.textContent = "Player Wins!"
-// 		console.log('Player wins')
-// 		render()
-// 		} 
-// 	}
-
-
+function checkHandVal(hand) {
+	handVal = 0
+	hand.forEach(card => {
+		handVal += cardLookup(card)
+	})
+}
+	
+function cardLookup(card) {
+  let cardValue;
+  if (card === "dA" || card === "hA" || card ==="cA" || card === "sA"){
+      cardValue = 11;
+  }
+  if (card === "dQ" || card === "hQ" || card === "cQ" || card === "sQ" ||
+      card === "dK" || card === "hK" || card === "cK" || card === "sK" ||
+      card === "dJ" || card === "hJ" || card === "cJ" || card === "sJ" ||
+      card === "d10" || card === "h10" || card === "c10" || card === "s10"){
+      cardValue = 10;
+  }
+  if (card === "d09" || card === "h09" || card ==="c09" || card === "s09"){
+      cardValue = 9;
+  }
+  if (card === "d08" || card === "h08" || card ==="c08" || card === "s08"){
+      cardValue = 8;
+  }
+  if (card === "d07" || card === "h07" || card ==="c07" || card === "s07"){
+      cardValue = 7;
+  }
+  if (card === "d06" || card === "h06" || card ==="c06" || card === "s06"){
+      cardValue = 6;
+  }
+  if (card === "d05" || card === "h05" || card ==="c05" || card === "s05"){
+      cardValue = 5;
+  }
+  if (card === "d04" || card === "h04" || card ==="c04" || card === "s04"){
+      cardValue = 4;
+  }
+  if (card === "d03" || card === "h03" || card ==="c03" || card === "s03"){
+      cardValue = 3;
+  }
+  if (card === "d02" || card === "h02" || card ==="c02" || card === "s02"){
+      cardValue = 2;
+  }    
+  return cardValue;
+}
+	
+	// function hit(hand) {
+	// 	hand.push(newCard)
+	// 	checkHandVal()
+	// }
+	
 function hit() {
 	let playerCard = selectCard()
 	playerHand.push(playerCard)
 	console.log(deck)
 	console.log(playerHand)
-		//player loses		
-	}
-
-	function stand(){
-		let dealerCard = selectCard()
-		dealerHand.push(dealerCard) 
-			// if(dealerHand < 17)
-		console.log(dealerHand)
+	//player loses		
 }
+	
+function stand(){
+	let dealerCard = selectCard()
+	dealerHand.push(dealerCard) 
+	// if(dealerHand < 17)
+	console.log(dealerHand)
+}
+	
+function getWinner(){
+	console.log('get winner')
+	if(playerHand === 21 && dealerHand === 21){
+	statusEL.textContent = "Push"
+	console.log('Push')
+	} else if(playerHand === 21 && dealerHand !== 21){
+		statusEL.textContent = "Player Wins!"
+		console.log('Player Wins')
+	} else if(playerHand !== 21 && dealerHand === 21){ 
+		statusEL.textContent = "Dealer Wins"
+		console.log('Dealer wins')
+	} else if(playerHand > 21){
+		statusEL.textContent = "Player Bust"
+		console.log('Player Bust')
+	}	else if(playerHand < 21 && dealerHand > 21){
+		statusEL.textContent = "Player Wins!"
+		console.log('Player wins')
+		render()
+	} 
+}
+
+// $$$$$$$$$        ACE LOGIC                   $$$$$$$$$$$$$$
+//ACE =1
+//if playerHand has < 2 ACE Card and playerHandValue is > 12, add 10
+//if playerHand has 4 CARDS TOTAL 3 ACE & 8 = BLACKJACK
+
 
 //Push cards to burnpile
 // function gameOver {
@@ -194,10 +248,6 @@ function hit() {
 // 	playerHand.push(burnpile)
 // }
 
-// $$$$$$$$$        ACE LOGIC                   $$$$$$$$$$$$$$
-//ACE =1
-//if playerHand has < 2 ACE Card and playerHandValue is > 12, add 10
-//if playerHand has 4 CARDS TOTAL 3 ACE & 8 = BLACKJACK
 
 
 
