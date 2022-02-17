@@ -14,15 +14,12 @@ let playerHandValue = 0
 let dealerHandValue = 0
 
 
-// function playerBet(bet) {
-// 	if (bet > bank) {
+// function playerBank(bet) {
+// 	if (bet.value > bank) {
 // 		statusEL.innerText = "Not Enough $$$"
 // 		console.log(playerBet)
 // 	}
-// 	// return bank -= bet	
-// 	// bank.innerText = "Player bank is = $" + bank
-// 	// statusEL.innerText = "Player bet is $" + amount + ", Press Deal"
-// }
+
 
 /*------------------------ Cached Element References ------------------------*/
 // const deckEl = document.getElementById('deck')
@@ -41,34 +38,32 @@ const bank = document.getElementById('playerBank')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-// bet1Btn.addEventListener('click', (evt)=> {
-// 	bet.innerText = "Bet $1"
-// 	bank.innerText = parseInt(playerBank.value) - parseInt(bet1Btn.value)
-// 	statusEL.innerText = "Player Bet is $1, Press Deal"
-// })
-
 bet1Btn.addEventListener('click', () => {
 	bet.innerText = "Bet $1"
   bank.innerText = parseInt(bank.textContent) - parseInt(bet1Btn.value)
 	statusEL.innerHTML = "Player Bet is $1, Press Deal"
+	bet1Btn.remove(),bet5Btn.remove(),bet25Btn.remove(),bet100Btn.remove()
 }) 
 
 bet5Btn.addEventListener('click', () => {
 	bet.innerText = "Bet $5"
   bank.innerText = parseInt(bank.textContent) - parseInt(bet5Btn.value)
 	statusEL.innerHTML = "Player Bet is $5, Press Deal"
+	bet1Btn.remove(),bet5Btn.remove(),bet25Btn.remove(),bet100Btn.remove()
 }) 
 
 bet25Btn.addEventListener('click', () => {
 	bet.innerText = "Bet $25"
   bank.innerText = parseInt(bank.textContent) - parseInt(bet25Btn.value)
 	statusEL.innerHTML = "Player Bet is $25, Press Deal"
+	bet1Btn.remove(),bet5Btn.remove(),bet25Btn.remove(),bet100Btn.remove()
 }) 
 
 bet100Btn.addEventListener('click', () => {
 	bet.innerText = "Bet $100"
   bank.innerText = parseInt(bank.textContent) - parseInt(bet100Btn.value)
 	statusEL.innerHTML = "Player Bet is $100, Press Deal"
+	bet1Btn.remove(),bet5Btn.remove(),bet25Btn.remove(),bet100Btn.remove()
 }) 
 
 // bet1Btn.addEventListener('click', (evt)=> {
