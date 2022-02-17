@@ -50,24 +50,32 @@ const bank = document.getElementById('playerBank')
 bet1Btn.addEventListener('click', () => {
 	bet.innerText = "Bet $1"
   bank.innerText = parseInt(bank.textContent) - parseInt(bet1Btn.value)
+	statusEL.innerHTML = "Player Bet is $1, Press Deal"
 }) 
 
 bet5Btn.addEventListener('click', () => {
 	bet.innerText = "Bet $5"
   bank.innerText = parseInt(bank.textContent) - parseInt(bet5Btn.value)
+	statusEL.innerHTML = "Player Bet is $5, Press Deal"
 }) 
 
 bet25Btn.addEventListener('click', () => {
 	bet.innerText = "Bet $25"
   bank.innerText = parseInt(bank.textContent) - parseInt(bet25Btn.value)
+	statusEL.innerHTML = "Player Bet is $25, Press Deal"
 }) 
 
 bet100Btn.addEventListener('click', () => {
 	bet.innerText = "Bet $100"
   bank.innerText = parseInt(bank.textContent) - parseInt(bet100Btn.value)
+	statusEL.innerHTML = "Player Bet is $100, Press Deal"
 }) 
 
-
+// bet1Btn.addEventListener('click', (evt)=> {
+// 	bet.innerText = "Bet $1"
+// 	bank.innerText = "Player Bank is $499" - bet
+// 	statusEL.innerHTML = "Player Bet is $1, Press Deal"
+// })
 // bet5Btn.addEventListener('click', (evt)=> {
 // 	bet.innerText = "Bet $5"
 // 	bank.innerText = "Player Bank is $495" - bet
