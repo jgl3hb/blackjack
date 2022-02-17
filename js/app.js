@@ -30,7 +30,7 @@ const bet5Btn = document.getElementById('bet-5')
 const bet25Btn = document.getElementById('bet-25')
 const bet100Btn = document.getElementById('bet-100')
 const dealBtn = document.getElementById('deal')
-const resetEl = document.getElementById('reset')
+const resetBtn = document.getElementById('reset')
 const hitBtn = document.getElementById('hit')
 const standBtn = document.getElementById('stand')
 const playerHandEl = document.getElementById('deal')
@@ -49,7 +49,6 @@ bet5Btn.addEventListener('click', () => {
 	bet.innerText = "Bet $5"
   bank.innerText = parseInt(bank.textContent) - parseInt(bet5Btn.value)
 	statusEL.innerHTML = "Player Bet is $5, Press Deal"
-	bet1Btn.remove(),bet5Btn.remove(),bet25Btn.remove(),bet100Btn.remove()
 }) 
 
 bet25Btn.addEventListener('click', () => {
@@ -66,38 +65,17 @@ bet100Btn.addEventListener('click', () => {
 	bet1Btn.remove(),bet5Btn.remove(),bet25Btn.remove(),bet100Btn.remove()
 }) 
 
-// bet1Btn.addEventListener('click', (evt)=> {
-// 	bet.innerText = "Bet $1"
-// 	bank.innerText = "Player Bank is $499" - bet
-// 	statusEL.innerHTML = "Player Bet is $1, Press Deal"
-// })
-// bet5Btn.addEventListener('click', (evt)=> {
-// 	bet.innerText = "Bet $5"
-// 	bank.innerText = "Player Bank is $495" - bet
-// 	statusEL.innerHTML = "Player Bet is $5, Press Deal"
-// })
-// bet25Btn.addEventListener('click', (evt)=> {
-// 	bet.innerText = "Bet $25"
-// 	bank.innerText = "Player Bank is = $475"
-// 	statusEL.innerHTML = "Player Bet is $25, Press Deal"
-// })
-// bet100Btn.addEventListener('click', (evt)=> {
-// 	bet.innerText = "Bet $100"
-// 	bank.innerText = "Player Bank is = $400" - bet
-// 	statusEL.innerHTML = "Player Bet is $100, Press Deal"
-// })
 
 document.getElementById('hit').addEventListener('click', hit)
-
 document.getElementById('stand').addEventListener('click', stand)
-
 document.getElementById('deal').addEventListener('click', initialDeal)
 
-document.getElementById('reset').addEventListener('click', (evt)=> {
-	bet.innerText = "Player Bet"
-	bank.innerText = "Player Bank is = $500"
-	statusEL.innerHTML = "Player Make Your Bet"
-})
+
+// document.getElementById('reset').addEventListener('click', (evt)=> {
+// 	bet.innerText = "Player Bet"
+// 	bank.innerText = "Player Bank is = $500"
+// 	statusEL.innerHTML = "Player Make Your Bet"
+// })
 
 /*-------------------------------- Functions --------------------------------*/
 init()
@@ -155,11 +133,6 @@ function selectCard() {
 function dealToPlayer() {
 	let playerCard = selectCard()
 	playerHand.push(playerCard)
-// 	// iterate thru cardValues
-// if playerCard === cardValues[i]
-// 	// take object value of suit, 
-// 	// save object to a variable
-// 	// add variable to playerHandValue
 }
 
 
