@@ -10,58 +10,62 @@ let playerHand = []
 let dealerHand = []
 let burnpile = []
 let cardToRemove, cardPicked
-let playerBank = 500
 let playerHandValue = 0
 let dealerHandValue = 0
 
 
-// function bet(amount) {
-// 	if (amount > playerBank) {
-// 		alert("You dont have that much")
-// 		return
+// function playerBet(bet) {
+// 	if (bet > bank) {
+// 		statusEL.innerText = "Not Enough $$$"
+// 		console.log(playerBet)
 // 	}
-// 	return playerBank -= amount
-// 	playerBank.innerText = "Player bank is = $" + playerBank
-// 	statusEL.innerHTML = "Player bet is $" + amount + ", Press Deal"
+// 	// return bank -= bet	
+// 	// bank.innerText = "Player bank is = $" + bank
+// 	// statusEL.innerText = "Player bet is $" + amount + ", Press Deal"
 // }
-
-
-
 
 /*------------------------ Cached Element References ------------------------*/
 // const deckEl = document.getElementById('deck')
 // const burnpileEl = document.getElementById('burnpile')
 const statusEL = document.getElementById('status')
-const bet1El = document.getElementById('bet-1')
-const bet5El = document.getElementById('bet-5')
-const bet25El = document.getElementById('bet-25')
-const bet100El = document.getElementById('bet-100')
-const dealEl = document.getElementById('deal')
+const bet1Btn = document.getElementById('bet-1')
+const bet5Btn = document.getElementById('bet-5')
+const bet25Btn = document.getElementById('bet-25')
+const bet100Btn = document.getElementById('bet-100')
+const dealBtn = document.getElementById('deal')
 const resetEl = document.getElementById('reset')
-const hitEl = document.getElementById('hit')
-const standEl = document.getElementById('stand')
+const hitBtn = document.getElementById('hit')
+const standBtn = document.getElementById('stand')
 const playerHandEl = document.getElementById('deal')
+const bank = document.getElementById('playerBank')
+
 
 /*----------------------------- Event Listeners -----------------------------*/
-document.getElementById('bet-1').addEventListener('click', (evt)=> {
-	playerbet.innerText = "Bet $1"
-	playerbank.innerText = "Player Bank is = $499" + playerBank
-	statusEL.innerHTML = "Player Bet is $1, Press Deal"
-})
+// bet1Btn.addEventListener('click', (evt)=> {
+// 	bet.innerText = "Bet $1"
+// 	bank.innerText = parseInt(playerBank.value) - parseInt(bet1Btn.value)
+// 	statusEL.innerText = "Player Bet is $1, Press Deal"
+// })
 
-document.getElementById('bet-5').addEventListener('click', (evt)=> {
-	playerbet.innerText = "Bet $5"
-	playerbank.innerText = "Player Bank is $495" + playerBank
+bet1Btn.addEventListener('click', () => {
+	bet.innerText = "Bet $1"
+  parseInt(bank.innerText) = parseInt(bank.textContent) - parseInt(bet1Btn.value)
+}) 
+
+
+bet5Btn.addEventListener('click', (evt)=> {
+	bet.innerText = "Bet $5"
+	bank.innerText = "Player Bank is $495" - bet
 	statusEL.innerHTML = "Player Bet is $5, Press Deal"
 })
-document.getElementById('bet-25').addEventListener('click', (evt)=> {
-	playerbet.innerText = "Bet $25"
-	playerbank.innerText = "Player Bank is = $475" + playerBank
+bet25Btn.addEventListener('click', (evt)=> {
+	bet.innerText = "Bet $25"
+	bank.innerText = "Player Bank is = $475"
 	statusEL.innerHTML = "Player Bet is $25, Press Deal"
 })
-document.getElementById('bet-100').addEventListener('click', (evt)=> {
-	playerbet.innerText = "Bet $100" + playerBank
-	playerbank.innerText = "Player Bank is = $400"
+bet100Btn.addEventListener('click', (evt)=> {
+	bet.innerText = "Bet $100"
+	bank.innerText = "Player Bank is = $400" - bet
 	statusEL.innerHTML = "Player Bet is $100, Press Deal"
 })
 
@@ -72,11 +76,10 @@ document.getElementById('stand').addEventListener('click', stand)
 document.getElementById('deal').addEventListener('click', initialDeal)
 
 document.getElementById('reset').addEventListener('click', (evt)=> {
-	playerbet.innerText = "Player Bet"
-	playerbank.innerText = "Player Bank is = $500"
+	bet.innerText = "Player Bet"
+	bank.innerText = "Player Bank is = $500"
 	statusEL.innerHTML = "Player Make Your Bet"
 })
-
 
 /*-------------------------------- Functions --------------------------------*/
 init()
@@ -93,11 +96,11 @@ function init() {
 // function bet(){
 
 
-// playerBank = playerBank - bet
+// bank = bank - bet
 
 // function bet () {
 // let bet1El = document.getElementById("bet-1");
-// playerbet.innerHTML = '$1';
+// bet.innerHTML = '$1';
 // 	render();
 // }
 //Allows for bet buttons to add up in bet input field
@@ -194,10 +197,18 @@ function hit() {
 		console.log(dealerHand)
 }
 
+//Push cards to burnpile
+// function gameOver {
+// 	dealerHand.push(burnpile)
+// 	playerHand.push(burnpile)
+// }
+
 // $$$$$$$$$        ACE LOGIC                   $$$$$$$$$$$$$$
 //ACE =1
 //if playerHand has < 2 ACE Card and playerHandValue is > 12, add 10
 //if playerHand has 4 CARDS TOTAL 3 ACE & 8 = BLACKJACK
+
+
 
 // Function to render deck state
 // function render(cardPicked) {
@@ -264,8 +275,3 @@ function hit() {
 //If player Bank > 1, 
 
 //Game 2 Begins
-
-
-
-
-
