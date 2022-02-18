@@ -29,7 +29,7 @@ My game table IMG URL Attribution
 
 https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6
 
-<img src="https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6"  width="32" height="32">
+<img src="https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6"  width="1080" height="1080">
 
 
 Pseudocode
