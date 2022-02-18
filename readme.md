@@ -22,11 +22,6 @@ Wireframe Link
 https://wireframe.cc/f1nkq5
 
 
-Player Blackjack Frame
-<img src="https://imgur.com/dy3hhlL"  width="480" height="480">
-
-
-
 My game table IMG URL Attribution
 
 https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6
