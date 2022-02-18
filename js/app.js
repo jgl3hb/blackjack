@@ -191,6 +191,7 @@ function checkHands() {
 	console.log(dealerScore)
 	if (playerScore > 21) {
 		renderPlayerBust()
+		
 	}
 }
 	
@@ -205,12 +206,14 @@ function stand(){
 			renderDealerBust()
 		}
 		console.log(dealerHand)
-	}
+	}	
 	console.log(deck)
 	console.log(playerHand)
 	console.log(playerScore)
 	console.log(dealerScore)
 	renderCards()
+	renderBlackjack()
+	displayDealerCards()
 	renderWin()
 }
 	
@@ -220,15 +223,19 @@ function renderBlackjack(){
 	if(playerScore === 21 && dealerScore === 21){
 		statusEL.textContent = "Push"
 		console.log('Push')
+		displayDealerCards()
 		return
 	}else if(playerScore === 21 && dealerScore !== 21){
 		statusEL.textContent = "Player Blackjack!"
 		console.log('Player Wins')
+		displayDealerCards()
 		return
 	}else if(playerScore !== 21 && dealerScore === 21){ 
 		statusEL.textContent = "Dealer Blackjack"
 		console.log('Dealer wins')
+		displayDealerCards()
 		return
+		
 	}
 }
 function renderPlayerBust(){
@@ -272,17 +279,30 @@ function renderCards() {
 			newCardDiv.className = `card large ${card}`
 			dealerDeckEl.appendChild(newCardDiv)
 		}
+	
 	})
+
+
 	// display totals for users
-	playerTotalEl.textContent = `Player: ${computeHandTotal(playerHand)}`
+	
 	// dealerTotalEl.textContent = `Dealer: ${computeHandTotal(dealerHand)}`
 }
+function displayDealerCards(){
+	dealerDeckEl.innerHTML = ''
+	dealerHand.forEach((card, idx) => {
+		let newCardDiv = document.createElement('div')
+		newCardDiv.className = `card large ${card}`
+		dealerDeckEl.appendChild(newCardDiv)
+	})
+}
+playerTotalEl.textContent = `Player: ${computeHandTotal(playerHand)}`
 
 function aceCard(){
 	//if playerHand has < 2 ACE Card and playerHandValue is > 12, add 10
 	//if playerHand has 4 CARDS TOTAL 3 ACE & 8 = BLACKJACK
 	
 }
+
 
 // $$$$$$$$$        ACE LOGIC                   $$$$$$$$$$$$$$
 //ACE =1
