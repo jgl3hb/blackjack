@@ -29,6 +29,10 @@ https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-g
 <img src="https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6"  width="480" height="480">
 
 
+Favicon Attribution
+<img src="https://static.thenounproject.com/png/1047490-200.png"  width="720" height="480">
+
+
 Pseudocode
 
 Player Bank=  $500
