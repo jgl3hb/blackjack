@@ -23,7 +23,9 @@ https://wireframe.cc/f1nkq5
 
 
 Player Blackjack Frame
-https://imgur.com/dy3hhlL
+<img src="https://imgur.com/dy3hhlL"  width="480" height="480">
+
+
 
 My game table IMG URL Attribution
 
