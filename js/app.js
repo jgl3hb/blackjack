@@ -137,16 +137,6 @@ function initialDeal() {
 	dealToDealer()
 	let playerScore = computeHandTotal(playerHand)
 	let dealerScore = computeHandTotal(dealerHand)
-	
-	// pcard.remove('card large outline')
-	// pcard.add('playerCard')
-	// pcard.remove('card large outline')
-	// pcard.add('playerCard')
-	// console.log('playerCard')
-	// dcard.remove('card large outline')
-	// dcard.add('playerCard')
-	// dcard.remove('card large outline')
-	// dcard.add('playerCard')
 	console.log(deck)
 	console.log(playerHand)
 	console.log(dealerHand)
@@ -254,7 +244,6 @@ function renderDealerBust(){
 	statusEL.textContent = "Dealer Bust"
 }
 
-
 function renderCards() {
 	// render card class names to divs
 	dealerDeckEl.innerHTML = ''
@@ -323,11 +312,6 @@ function checkForBlackjack(){
 		render()
 	} 
 }
-//Push cards to burnpile
-// function gameOver {
-// 	dealerHand.push(burnpile)
-// 	playerHand.push(burnpile)
-// }
 
 
 // $$$$$$$$$        ACE LOGIC                   $$$$$$$$$$$$$$
