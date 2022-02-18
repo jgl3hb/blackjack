@@ -239,12 +239,16 @@ function renderDealerBust(){
 }
 
 function renderWin(){
-	if (playerScore > dealerScore && playerScore < 21){
+	let dealerScore = computeHandTotal(dealerHand)
+	let playerScore = computeHandTotal(playerHand)
+	if (playerScore > dealerScore && playerScore < 22){
 	statusEL.textContent = "Player Wins!";
 	console.log('Player wins')
-	} elseif (dealerScore > playerScore && playerScore < 21);{
+	return
+	} else if (dealerScore > playerScore && dealerScore < 22){
 	statusEL.textContent = "Dealer Wins";
 	console.log('Dealer wins')
+	return
 	}
 }
 
@@ -270,14 +274,17 @@ function renderCards() {
 	})
 	// display totals for users
 	playerTotalEl.textContent = `Player: ${computeHandTotal(playerHand)}`
-	dealerTotalEl.textContent = `Dealer: ${computeHandTotal(dealerHand)}`
+	// dealerTotalEl.textContent = `Dealer: ${computeHandTotal(dealerHand)}`
 }
 
+function aceCard(){
+	//if playerHand has < 2 ACE Card and playerHandValue is > 12, add 10
+	//if playerHand has 4 CARDS TOTAL 3 ACE & 8 = BLACKJACK
+	
+}
 
 // $$$$$$$$$        ACE LOGIC                   $$$$$$$$$$$$$$
 //ACE =1
-//if playerHand has < 2 ACE Card and playerHandValue is > 12, add 10
-//if playerHand has 4 CARDS TOTAL 3 ACE & 8 = BLACKJACK
 
 
 // function checkForBlackjack(){
