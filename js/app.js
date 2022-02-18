@@ -279,13 +279,7 @@ function renderCards() {
 			newCardDiv.className = `card large ${card}`
 			dealerDeckEl.appendChild(newCardDiv)
 		}
-	
 	})
-
-
-	// display totals for users
-	
-	// dealerTotalEl.textContent = `Dealer: ${computeHandTotal(dealerHand)}`
 }
 function displayDealerCards(){
 	dealerDeckEl.innerHTML = ''
