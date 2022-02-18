@@ -2,7 +2,7 @@ Blackjack
 
 Play My Game: https://jgl3hb.github.io/blackjack/
 
-<img src="https://imgur.com/a/xtrT6a7">
+<img src="https://imgur.com/a/LF2uiww"  width="480" height="480">
 
 Technologies Used: 
 HTML, CSS, Javascript, Bootstrap
@@ -29,7 +29,7 @@ My game table IMG URL Attribution
 
 https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6
 
-<img src="https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6"  width="1080" height="1080">
+<img src="https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6"  width="480" height="480">
 
 
 Pseudocode
