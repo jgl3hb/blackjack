@@ -211,6 +211,7 @@ function stand(){
 	console.log(playerScore)
 	console.log(dealerScore)
 	renderCards()
+	renderWin()
 }
 	
 function renderBlackjack(){
