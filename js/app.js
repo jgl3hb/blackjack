@@ -190,8 +190,7 @@ function checkHands() {
 	console.log(playerScore)
 	console.log(dealerScore)
 	if (playerScore > 21) {
-		renderPlayerBust()
-		
+		renderPlayerBust()		
 	}
 }
 	
@@ -289,41 +288,25 @@ function displayDealerCards(){
 		dealerDeckEl.appendChild(newCardDiv)
 	})
 }
-playerTotalEl.textContent = `Player: ${computeHandTotal(playerHand)}`
 
-function aceCard(){
-	//if playerHand has < 2 ACE Card and playerHandValue is > 12, add 10
-	//if playerHand has 4 CARDS TOTAL 3 ACE & 8 = BLACKJACK
+
+
+
+// function aceCard(){
+// 	let dealerScore = computeHandTotal(dealerHand)
+// 	let playerScore = computeHandTotal(playerHand)
+// 	if (playerScore > 21) {
+
 	
-}
+// }
 
 
 // $$$$$$$$$        ACE LOGIC                   $$$$$$$$$$$$$$
 //ACE =1
 
 
-// function checkForBlackjack(){
-// 	if(playerScore === 21 && dealerScore === 21){
-// 		statusEL.textContent = "Push"
-// 		console.log('Push')
-// 	} else if(playerScore === 21 && dealerScore !== 21){
-// 		statusEL.textContent = "Player Wins!"
-// 		console.log('Player Wins')
-// 	} else if(playerScore !== 21 && dealerScore === 21){ 
-// 		statusEL.textContent = "Dealer Wins"
-// 		console.log('Dealer wins')
-// 	} else if(playerScore > 21){
-// 		statusEL.textContent = "Player Bust"
-// 		console.log('Player Bust')
-// 	}	else if(playerScore < 21 && dealerScore > 21){
-// 		statusEL.textContent = "Player Wins!"
-// 		console.log('Player wins')
-// 		render()
-// 	} 
-// 	renderBlackjack()
-// }
 
-
+// let playerScore = computeHandTotal(playerHand)
 
 
 // Function to render deck state

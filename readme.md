@@ -1,23 +1,23 @@
 Blackjack
 
 Objective:
-Create a browser-based game that models a basic game of blackjack
+Create a browser-based game that models a casino quality game of blackjack
 
 I learned how to play Blackjack as a kid on this retro Radio Shack calculator.
 //https://1.bp.blogspot.com/-6gKQPJl6TqE/YAzriwHXq2I/AAAAAAAAILU/k7KYtFOk1QQOA4rc64Cy-axBgoFemSFowCLcBGAsYHQ/s2048/0122212058c.jpg
 
-Blackjack is neat because unlike Roulette or other casino games, there is skill involved and if you're good enough at math, you can tilt the odds in your favor. 
+Blackjack is popular because unlike Roulette or other casino games, there is skill involved and if you're good at math, you can tilt the odds in your favor. 
 
-Prototype
+Wireframe Link
+https://wireframe.cc/f1nkq5
 
-Wireframe IMG
+Player Blackjack Frame
+https://imgur.com/dy3hhlL
 
-My game table IMG
-
+My game table IMG URL Attribution
+https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6
 
 Pseudocode
-
-Game 1
 
 Player Bank=  $500
 Bet reset to 0
@@ -52,10 +52,6 @@ If you go over 21 you bust, and the dealer wins regardless of the dealer's hand.
 If you are dealt 21 from the start (Ace & 10), you got a blackjack.
 Blackjack usually means you win 1.5 the amount of your bet. Depends on the casino.
 Dealer will hit until his/her cards total 17 or higher.
-
-
-//Game 2 Begins
-
 
 MVP
 
