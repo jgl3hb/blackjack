@@ -15,11 +15,10 @@ I learned how to play Blackjack as a kid on this retro Radio Shack calculator.
 
 Blackjack is popular because unlike Roulette or other casino games, there is skill involved and if you're good at math, you can tilt the odds in your favor.
 
- <img src="../images/blackjack.jpg" width="500" height="600"> 
 
 Wireframe Link
 https://wireframe.cc/f1nkq5
-<img src="w3html.gif" alt="W3Schools.com" width="100" height="132">
+
 
 Player Blackjack Frame
 https://imgur.com/dy3hhlL
@@ -28,7 +27,6 @@ My game table IMG URL Attribution
 
 https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6
 
-<img src="https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6" alt="Lamp" width="32" height="32">
 
 
 Pseudocode
