@@ -2,7 +2,7 @@ Blackjack
 
 Play My Game: https://jgl3hb.github.io/blackjack/
 
-<img src="https://imgur.com/a/LF2uiww"  width="480" height="480">
+<img src="https://imgur.com/7QmRY9k"  width="480" height="480">
 
 Technologies Used: 
 HTML, CSS, Javascript, Bootstrap
