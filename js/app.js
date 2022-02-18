@@ -36,6 +36,10 @@ const hitBtn = document.getElementById('hit')
 const standBtn = document.getElementById('stand')
 const playerHandEl = document.getElementById('deal')
 const bank = document.getElementById('playerBank')
+const playerTotalEl = document.getElementById('playerhandvalue')
+const dealerTotalEl = document.getElementById('dealerhandvalue')
+const playerDeckEl = document.getElementById('player-cards')
+const dealerDeckEl = document.getElementById('dealer-cards')
 // const playercard = document.getElementById('playercard')
 
 
@@ -148,10 +152,8 @@ function initialDeal() {
 	console.log(dealerHand)
 	console.log(playerScore)
 	console.log(dealerScore)
+	renderCards()
 }	
-
-document.createElement
-
 
 function computeHandTotal(hand) {
   let total = 0
@@ -202,22 +204,37 @@ function cardLookup(card) {
 function hit() {
 	let playerCard = selectCard()
 	playerHand.push(playerCard)
-	let playerScore = computeHandTotal(playerHand)
-	let dealerScore = computeHandTotal(dealerHand)
+
 	console.log(deck)
 	console.log(playerHand)
+
+	checkHands()
+	renderCards()
+	//player loses		
+}
+
+function checkHands() {
+	let playerScore = computeHandTotal(playerHand)
+	let dealerScore = computeHandTotal(dealerHand)
 	console.log(playerScore)
 	console.log(dealerScore)
-
-	//player loses		
+	if (playerScore > 21) {
+		renderPlayerBust()
+	}
 }
 	
 function stand(){
-	let dealerCard = selectCard()
-	dealerHand.push(dealerCard) 
-	console.log(dealerHand)
-	let playerScore = computeHandTotal(playerHand)
 	let dealerScore = computeHandTotal(dealerHand)
+	let playerScore = computeHandTotal(playerHand)
+	while (dealerScore <= 17) {
+		let dealerCard = selectCard()
+		dealerHand.push(dealerCard)
+		dealerScore = computeHandTotal(dealerHand)
+		if (dealerScore > 21) {
+			renderDealerBust()
+		}
+		console.log(dealerHand)
+	}
 		// if(dealerHand < 17)
 	// if(dealerScore > 16)
 	// getWinner
@@ -225,17 +242,42 @@ function stand(){
 	console.log(playerHand)
 	console.log(playerScore)
 	console.log(dealerScore)
-
+	renderCards()
 }
 	
-function renderBust(){
-	if(playerScore > 21){
-		statusEL.textContent = "Player Bust"
-		console.log('Player Bust')
-	} else if (dealerScore > 21){
-		statusEL.textContent = "Dealer Bust, Player Wins!"
-		console.log('Dealer Bust')
-	}
+function renderPlayerBust(){
+	statusEL.textContent = "Player Bust"
+}
+
+
+function renderDealerBust(){
+	statusEL.textContent = "Dealer Bust"
+}
+
+
+function renderCards() {
+	// render card class names to divs
+	dealerDeckEl.innerHTML = ''
+	playerDeckEl.innerHTML = ''
+	playerHand.forEach(card => {
+		let newCardDiv = document.createElement('div')
+		newCardDiv.className = `card large ${card}`
+		playerDeckEl.appendChild(newCardDiv)
+	})
+	dealerHand.forEach((card, idx) => {
+		if (idx > 0) {
+			let newCardDiv = document.createElement('div')
+			newCardDiv.className = `card large ${card}`
+			dealerDeckEl.appendChild(newCardDiv)
+		} else {
+			let newCardDiv = document.createElement('div')
+			newCardDiv.className = `card large back-red`
+			dealerDeckEl.appendChild(newCardDiv)
+		}
+	})
+	// display totals for users
+	playerTotalEl.textContent = `Player: ${computeHandTotal(playerHand)}`
+	dealerTotalEl.textContent = `Dealer: ${computeHandTotal(dealerHand)}`
 }
 
 function renderBlackjack(){
