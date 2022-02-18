@@ -2,6 +2,9 @@ Blackjack
 
 Play My Game: https://jgl3hb.github.io/blackjack/
 
+Technologies Used: 
+HTML, CSS, Javascript, Bootstrap
+
 Objective:
 Create a browser-based game that models a casino quality game of blackjack
 
@@ -67,5 +70,5 @@ Game 2 starts with player betting again
 
 
 Stretch Goals
-
+Ace Logic
 Add Split and Double components
