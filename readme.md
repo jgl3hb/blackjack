@@ -10,8 +10,8 @@ Create a browser-based game that models a casino quality game of blackjack
 
 I learned how to play Blackjack as a kid on this retro Radio Shack calculator.
 
+<img src="https://1.bp.blogspot.com/-6gKQPJl6TqE/YAzriwHXq2I/AAAAAAAAILU/k7KYtFOk1QQOA4rc64Cy-axBgoFemSFowCLcBGAsYHQ/s2048/0122212058c.jpg"  width="32" height="32">
 
-<img src="https://1.bp.blogspot.com/-6gKQPJl6TqE/YAzriwHXq2I/AAAAAAAAILU/k7KYtFOk1QQOA4rc64Cy-axBgoFemSFowCLcBGAsYHQ/s2048/0122212058c.jpg width="100" height="132">
 
 Blackjack is popular because unlike Roulette or other casino games, there is skill involved and if you're good at math, you can tilt the odds in your favor.
 
@@ -27,6 +27,7 @@ My game table IMG URL Attribution
 
 https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6
 
+<img src="https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6"  width="32" height="32">
 
 
 Pseudocode
