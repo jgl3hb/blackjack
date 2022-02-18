@@ -1,5 +1,7 @@
 Blackjack
 
+Play My Game: https://jgl3hb.github.io/blackjack/
+
 Objective:
 Create a browser-based game that models a casino quality game of blackjack
 
