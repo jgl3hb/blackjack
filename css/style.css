@@ -19,99 +19,131 @@ html {
 
 body {
   background-image: url("https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6");
-  display: flex;
   justify-content: center;
 }
+
 main {
+  padding-top: 75px;
   display: row;
-  flex-direction: center;
-  justify-content: center; 
-}
-h1 {
-  display: flex;
   justify-content: center;
-  font-weight: bold;
 }
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
 .container {
   display: row;
   flex-direction: column;
   justify-content: row;
 }
+
 #burnpile {
-  display: flex;
   justify-content: flex-start;
 }
+
 #deck {
-  display: flex;
   justify-content: flex-end;
 }
+
 #dealerhandvalue {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 25px;
+  color: white;
 }
-#dealercard {
-} 
+
+/* #dealercard {
+  flex-direction: center;
+  justify-content: center;
+}  */
+
+#playerhandvalue {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  color: white;
+}
+
 #rules {
-  display: flex;
   justify-content: center;
   font-weight: bold;
   font-size: 20px;
   text-align: center;
+  color: white;
 } 
-#playercard {
-  display: row;
-  flex-direction: center;
+
+#pcard {
+  display: inline-flex;  
   justify-content: center;
-  text-align: center;
-} 
-#playerhandvalue {
-  display: flex;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 12px;
+  justify-content: flex-start;
 }
+
+#dcard {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+#player-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#dealer-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 #bet {
-  display: flex;
   justify-content: center;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 25px;
   text-align: center;
 }
+
 #status {
-  color: black;
+  color: white;
   justify-content: center;
   font-weight: bold;
   text-decoration: underline;
   font-size: 30px;
   text-align: center;
 }
+
 #playerBank {
-  display: flex;
   justify-content: center;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 25px;
   text-align: center;
+  color: white;
 }
+
 #bet {
+  color: white;
 }
-#dealreset {
-}
+
 #hitstand {
   align-items: center;
-  display: flex;
   flex-direction: center;  
 }
+
 .card {
   margin: 3vh;
 }
+
 .card.outline {
   border: 0.15em dashed #202d7a;
 }
+
 .card.shadow {
   box-shadow: 7px 7px 7px 0 rgba(41, 41, 41, 0.95) !important;
 }
+
 .btn {
   margin: 3px 3px 3px 3px;
   color: goldenrod;

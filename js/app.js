@@ -4,6 +4,7 @@ let dealerHand = []
 let burnpile = []
 let cardToRemove, cardPicked
 
+
 const statusEL = document.getElementById('status')
 const bet1Btn = document.getElementById('bet-1')
 const bet5Btn = document.getElementById('bet-5')
@@ -47,6 +48,12 @@ bet100Btn.addEventListener('click', () => {
 	statusEL.innerHTML = "Player Bet is $100, Press Deal"
 	bet1Btn.remove(),bet5Btn.remove(),bet25Btn.remove(),bet100Btn.remove()
 }) 
+
+//remove Deal button
+// dealBtn.addEventListener('click', () => {
+// 	dealBtn.remove()
+// })
+
 
 document.getElementById('hit').addEventListener('click', hit)
 document.getElementById('stand').addEventListener('click', stand)
@@ -173,7 +180,6 @@ function stand(){
 		if (dealerScore > 21) {
 			renderDealerBust()
 		}
-
 	}	
 	renderCards()
 	renderBlackjack()
@@ -188,15 +194,14 @@ function renderBlackjack(){
 		statusEL.textContent = "Push"
 		displayDealerCards()
 		return
-	}else if(playerScore === 21 && dealerScore !== 21){
+	} else if(playerScore === 21 && dealerScore !== 21){
 		statusEL.textContent = "Player Blackjack!"
 		displayDealerCards()
 		return
-	}else if(playerScore !== 21 && dealerScore === 21){ 
+	} else if(playerScore !== 21 && dealerScore === 21){ 
 		statusEL.textContent = "Dealer Blackjack"
 		displayDealerCards()
-		return
-		
+		return		
 	}
 }
 
