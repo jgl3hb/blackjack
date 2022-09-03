@@ -49,15 +49,14 @@ h1 {
   display: flex;
   justify-content: center;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 32px;
 }
-#dealercard {
-} 
+
 #rules {
   display: flex;
   justify-content: center;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 32px;
   text-align: center;
 } 
 #playercard {
@@ -70,13 +69,13 @@ h1 {
   display: flex;
   justify-content: center;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 32px;
 }
 #bet {
   display: flex;
   justify-content: center;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 32px;
   text-align: center;
 }
 #status {
@@ -84,20 +83,17 @@ h1 {
   justify-content: center;
   font-weight: bold;
   text-decoration: underline;
-  font-size: 30px;
+  font-size: 32px;
   text-align: center;
 }
 #playerBank {
   display: flex;
   justify-content: center;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 32px;
   text-align: center;
 }
-#bet {
-}
-#dealreset {
-}
+
 #hitstand {
   align-items: center;
   display: flex;
@@ -120,94 +116,3 @@ h1 {
   border: 2px solid goldenrod;
   justify-content: center;
 }
-
-
-
-
-
-
-
-/*
-@media only screen and (min-width: 650px) {
-  main {
-    display: grid;
-    text-align: center;
-    width: 250px;
-  }
-}
-  
-  #deck {
-    text-align: right;
-    color: gray;
-    padding: 10px 20px 0 0;
-  }
-  .card {
-    margin: 3vh;
-  }
-  
-  .card.outline {
-    border: 0.15em dashed #202d7a;
-  }
-  
-  .card.shadow {
-    box-shadow: 7px 7px 7px 0 rgba(41, 41, 41, 0.95) !important;
-  }
-  
-  .btn {
-    margin-top: 3vh;
-    color: goldenrod;
-    background-color: blue;
-    font-weight: bold;
-    border: 2px solid goldenrod;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  #dealerhand {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    min-width: none;
-  }
-  #playerhand {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    min-width: none;
-  }
-  
-  #bet {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    min-width: none;
-  }
-  #dealreset {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    min-width: none;
-  }
-  
-  #hitstand {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    min-width: none;
-  }
-  /* bet {
-  display: grid;
-    text-align: left;
-    width: 500px;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto auto auto auto;
-    grid-template-areas: 
-      "status name"
-      "img occupation"
-      "img brand" 
-      "contact offer";
-  } */
