@@ -5,7 +5,11 @@ let dealerHand = []
 let burnpile = []
 let cardToRemove, cardPicked
 
+<<<<<<< HEAD
 /*----------------Constants----------------------------*/
+=======
+
+>>>>>>> bab6e980536b9e935de2bcba1629c45c67695552
 const statusEL = document.getElementById('status')
 const bet1Btn = document.getElementById('bet-1')
 const bet5Btn = document.getElementById('bet-5')
@@ -51,9 +55,17 @@ bet100Btn.addEventListener('click', () => {
 	bet1Btn.remove(),bet5Btn.remove(),bet25Btn.remove(),bet100Btn.remove()
 }) 
 
+<<<<<<< HEAD
 dealBtn.addEventListener('click', () => {
 	dealBtn.remove();
 }) 
+=======
+//remove Deal button
+// dealBtn.addEventListener('click', () => {
+// 	dealBtn.remove()
+// })
+
+>>>>>>> bab6e980536b9e935de2bcba1629c45c67695552
 
 document.getElementById('hit').addEventListener('click', hit)
 document.getElementById('stand').addEventListener('click', stand)
@@ -269,13 +281,24 @@ function renderBlackjack(){
 		statusEL.textContent = "Push"
 		displayDealerCards()
 		return
+<<<<<<< HEAD
 	} else if (playerScore === 21 && dealerScore !== 21){
+=======
+	} else if(playerScore === 21 && dealerScore !== 21){
+>>>>>>> bab6e980536b9e935de2bcba1629c45c67695552
 		statusEL.textContent = "Player Blackjack!"
 		return
+<<<<<<< HEAD
 	} else if (playerScore !== 21 && dealerScore === 21) { 
 		statusEL.textContent = "Dealer Blackjack"
 		displayDealerCards()
 		return
+=======
+	} else if(playerScore !== 21 && dealerScore === 21){ 
+		statusEL.textContent = "Dealer Blackjack"
+		displayDealerCards()
+		return		
+>>>>>>> bab6e980536b9e935de2bcba1629c45c67695552
 	}
 }
 
