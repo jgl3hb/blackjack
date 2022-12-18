@@ -23,7 +23,7 @@ body {
 }
 
 main {
-  padding-top: 75px;
+  padding-top: 5px;
   display: row;
   justify-content: center;
 }
@@ -51,21 +51,21 @@ h1 {
 #dealerhandvalue {
   text-align: center;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
   color: white;
 }
 
 #playerhandvalue {
   text-align: center;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
   color: white;
 }
 
 #rules {
   justify-content: center;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
   color: white;
 } 
@@ -97,7 +97,7 @@ h1 {
 #bet {
   justify-content: center;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -106,14 +106,14 @@ h1 {
   justify-content: center;
   font-weight: bold;
   text-decoration: underline;
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
 }
 
 #playerBank {
   justify-content: center;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
   color: white;
 }
