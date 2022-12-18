@@ -49,11 +49,10 @@ bet100Btn.addEventListener('click', () => {
 	bet1Btn.remove(),bet5Btn.remove(),bet25Btn.remove(),bet100Btn.remove()
 }) 
 
-//remove Deal button
+// remove Deal button
 // dealBtn.addEventListener('click', () => {
 // 	dealBtn.remove()
 // })
-
 
 document.getElementById('hit').addEventListener('click', hit)
 document.getElementById('stand').addEventListener('click', stand)
@@ -169,6 +168,24 @@ function checkHands() {
 		renderPlayerBust()		
 	}
 }
+
+function renderBlackjack(){
+	let dealerScore = computeHandTotal(dealerHand)
+	let playerScore = computeHandTotal(playerHand)
+	if(playerScore === 21 && dealerScore === 21){
+		statusEL.textContent = "Push"
+		displayDealerCards()
+		return
+	} else if(playerScore === 21 && dealerScore !== 21){
+		statusEL.textContent = "Player Blackjack!"
+		displayDealerCards()
+		return
+	} else if(playerScore !== 21 && dealerScore === 21){ 
+		statusEL.textContent = "Dealer Blackjack"
+		displayDealerCards()
+		return		
+	}
+}
 	
 function stand(){
 	let dealerScore = computeHandTotal(dealerHand)
@@ -187,24 +204,6 @@ function stand(){
 	renderWin()
 }
 	
-function renderBlackjack(){
-	let dealerScore = computeHandTotal(dealerHand)
-	let playerScore = computeHandTotal(playerHand)
-	if(playerScore === 21 && dealerScore === 21){
-		statusEL.textContent = "Push"
-		displayDealerCards()
-		return
-	} else if(playerScore === 21 && dealerScore !== 21){
-		statusEL.textContent = "Player Blackjack!"
-		displayDealerCards()
-		return
-	} else if(playerScore !== 21 && dealerScore === 21){ 
-		statusEL.textContent = "Dealer Blackjack"
-		displayDealerCards()
-		return		
-	}
-}
-
 function renderPlayerBust(){
 	statusEL.textContent = "Player Bust"
 }
@@ -226,7 +225,6 @@ function renderWin(){
 }
 
 function renderCards() {
-	// render card class names to divs
 	dealerDeckEl.innerHTML = ''
 	playerDeckEl.innerHTML = ''
 	playerHand.forEach(card => {
@@ -246,6 +244,7 @@ function renderCards() {
 		}
 	})
 }
+
 function displayDealerCards(){
 	dealerDeckEl.innerHTML = ''
 	dealerHand.forEach((card, idx) => {

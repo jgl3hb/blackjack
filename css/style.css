@@ -55,11 +55,6 @@ h1 {
   color: white;
 }
 
-/* #dealercard {
-  flex-direction: center;
-  justify-content: center;
-}  */
-
 #playerhandvalue {
   text-align: center;
   font-weight: bold;
@@ -107,7 +102,7 @@ h1 {
 }
 
 #status {
-  color: white;
+  color: navy;
   justify-content: center;
   font-weight: bold;
   text-decoration: underline;
@@ -144,20 +139,14 @@ h1 {
   box-shadow: 7px 7px 7px 0 rgba(41, 41, 41, 0.95) !important;
 }
 
-.btn {
-  margin: 3px 3px 3px 3px;
+.btn-lg {
+  margin: 5px 5px 5px 5px;
   color: goldenrod;
   background-color: blue;
   font-weight: bold;
   border: 2px solid goldenrod;
   justify-content: center;
 }
-
-
-
-
-
-
 
 /*
 @media only screen and (min-width: 650px) {
