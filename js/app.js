@@ -1,67 +1,28 @@
-
 /*----------------Variables----------------------------*/
-let deck = []
-let playerHand = []
-let dealerHand = []
-let burnpile = []
-let cardToRemove, cardPicked
+let deck=[], playerHand=[], dealerHand=[], burnpile=[], cardToRemove, cardPicked;
 
 /*----------------Constants----------------------------*/
-const statusEL = document.getElementById('status')
-const bet1Btn = document.getElementById('bet-1')
-const bet5Btn = document.getElementById('bet-5')
-const bet25Btn = document.getElementById('bet-25')
-const bet100Btn = document.getElementById('bet-100')
-const dealBtn = document.getElementById('deal')
-const resetBtn = document.getElementById('reset')
-const hitBtn = document.getElementById('hit')
-const standBtn = document.getElementById('stand')
-const playerHandEl = document.getElementById('deal')
-const bank = document.getElementById('playerBank')
-const playerTotalEl = document.getElementById('playerhandvalue')
-const dealerTotalEl = document.getElementById('dealerhandvalue')
-const playerDeckEl = document.getElementById('player-cards')
-const dealerDeckEl = document.getElementById('dealer-cards')
+const statusEL = document.getElementById('status'), bet1Btn = document.getElementById('bet-1'), 
+bet5Btn = document.getElementById('bet-5'), bet25Btn = document.getElementById('bet-25'), 
+bet100Btn = document.getElementById('bet-100'), dealBtn = document.getElementById('deal'), 
+resetBtn = document.getElementById('reset'), hitBtn = document.getElementById('hit'), 
+standBtn = document.getElementById('stand'), playerHandEl = document.getElementById('deal'), 
+bank = document.getElementById('playerBank'), playerTotalEl = document.getElementById('playerhandvalue'), 
+dealerTotalEl = document.getElementById('dealerhandvalue'), playerDeckEl = document.getElementById('player-cards'), 
+dealerDeckEl = document.getElementById('dealer-cards');
+  
+/* Event Listeners*/
+bet1Btn.addEventListener('click', () => handleBet(bet1Btn, 1));
+bet5Btn.addEventListener('click', () => handleBet(bet5Btn, 5));
+bet25Btn.addEventListener('click', () => handleBet(bet25Btn, 25));
+bet100Btn.addEventListener('click', () => handleBet(bet100Btn, 100));
 
-/*----------------Event Listeners----------------------------*/
-bet1Btn.addEventListener('click', () => {
-	bet.innerText = "Bet $1"
-  bank.innerText = `$${parseInt(bank.textContent) - parseInt(bet1Btn.value)}`
-	statusEL.innerHTML = "Player Bet is $1, Press Deal"
-	bet1Btn.remove(),bet5Btn.remove(),bet25Btn.remove(),bet100Btn.remove()
-}) 
+dealBtn.addEventListener('click', () => dealBtn.remove());
 
-bet5Btn.addEventListener('click', () => {
-	bet.innerText = "Bet $5"
-	bank.innerText = `$${parseInt(bank.textContent) - parseInt(bet5Btn.value)}`
-	statusEL.innerHTML = "Player Bet is $5, Press Deal"
-	bet1Btn.remove(),bet5Btn.remove(),bet25Btn.remove(),bet100Btn.remove()
-}) 
-
-bet25Btn.addEventListener('click', () => {
-	bet.innerText = "Bet $25"
-  bank.innerText = `$${parseInt(bank.textContent) - parseInt(bet25Btn.value)}`
-	statusEL.innerHTML = "Player Bet is $25, Press Deal"
-	bet1Btn.remove(),bet5Btn.remove(),bet25Btn.remove(),bet100Btn.remove()
-}) 
-
-bet100Btn.addEventListener('click', () => {
-	bet.innerText = "Bet $100"
-	bank.innerText = `$${parseInt(bank.textContent) - parseInt(bet100Btn.value)}`
-	statusEL.innerHTML = "Player Bet is $100, Press Deal"
-	bet1Btn.remove(),bet5Btn.remove(),bet25Btn.remove(),bet100Btn.remove()
-}) 
-
-//remove Deal button
-// dealBtn.addEventListener('click', () => {
-// 	dealBtn.remove()
-// })
-
-document.getElementById('hit').addEventListener('click', hit)
-document.getElementById('stand').addEventListener('click', stand)
-document.getElementById('deal').addEventListener('click', initialDeal)
-
-
+document.getElementById('hit').addEventListener('click', hit);
+document.getElementById('stand').addEventListener('click', stand);
+document.getElementById('deal').addEventListener('click', initialDeal);
+  
 /*----------------Functions----------------------------*/
 init()
 //Initializes Deck
@@ -70,43 +31,24 @@ function init() {
 }
 // Assigns Card Values
 function cardLookup(card) {
-  let cardValue;
-	if (card === "dA" || card === "hA" || card ==="cA" || card === "sA"){
-		cardValue = 11;
-}
-  if (card === "dQ" || card === "hQ" || card === "cQ" || card === "sQ" ||
-      card === "dK" || card === "hK" || card === "cK" || card === "sK" ||
-      card === "dJ" || card === "hJ" || card === "cJ" || card === "sJ" ||
-      card === "d10" || card === "h10" || card === "c10" || card === "s10"){
-      cardValue = 10;
+	const cardValues = {
+	  'dA': 11, 'hA': 11, 'cA': 11, 'sA': 11,
+	  'dK': 10, 'hK': 10, 'cK': 10, 'sK': 10,
+	  'dQ': 10, 'hQ': 10, 'cQ': 10, 'sQ': 10,
+	  'dJ': 10, 'hJ': 10, 'cJ': 10, 'sJ': 10,
+	  'd10': 10, 'h10': 10, 'c10': 10, 's10': 10,
+	  'd09': 9, 'h09': 9, 'c09': 9, 's09': 9,
+	  'd08': 8, 'h08': 8, 'c08': 8, 's08': 8,
+	  'd07': 7, 'h07': 7, 'c07': 7, 's07': 7,
+	  'd06': 6, 'h06': 6, 'c06': 6, 's06': 6,
+	  'd05': 5, 'h05': 5, 'c05': 5, 's05': 5,
+	  'd04': 4, 'h04': 4, 'c04': 4, 's04': 4,
+	  'd03': 3, 'h03': 3, 'c03': 3, 's03': 3,
+	  'd02': 2, 'h02': 2, 'c02': 2, 's02': 2
+	};
+	return cardValues[card];
   }
-  if (card === "d09" || card === "h09" || card ==="c09" || card === "s09"){
-      cardValue = 9;
-  }
-  if (card === "d08" || card === "h08" || card ==="c08" || card === "s08"){
-      cardValue = 8;
-  }
-  if (card === "d07" || card === "h07" || card ==="c07" || card === "s07"){
-      cardValue = 7;
-  }
-  if (card === "d06" || card === "h06" || card ==="c06" || card === "s06"){
-      cardValue = 6;
-  }
-  if (card === "d05" || card === "h05" || card ==="c05" || card === "s05"){
-      cardValue = 5;
-  }
-  if (card === "d04" || card === "h04" || card ==="c04" || card === "s04"){
-      cardValue = 4;
-  }
-  if (card === "d03" || card === "h03" || card ==="c03" || card === "s03"){
-      cardValue = 3;
-  }
-  if (card === "d02" || card === "h02" || card ==="c02" || card === "s02"){
-      cardValue = 2;
-  }    
-  return cardValue;
-}
-
+  
 // render card class names to divs
 function renderCards() {
 	dealerDeckEl.innerHTML = ''
@@ -128,6 +70,20 @@ function renderCards() {
 		}
 	})
 }
+
+function handleBet(button, betAmount) {
+	bet.innerText = `Bet $${betAmount}`;
+	bank.innerText = `$${parseInt(bank.textContent) - parseInt(button.value)}`;
+	statusEL.innerHTML = `Player Bet is $${betAmount}, Press Deal`;
+	removeBetButtons();
+  }
+  
+  function removeBetButtons() {
+	bet1Btn.remove();
+	bet5Btn.remove();
+	bet25Btn.remove();
+	bet100Btn.remove();
+  }  
 
 function displayDealerCards(){
 	dealerDeckEl.innerHTML = ''
@@ -170,14 +126,6 @@ function dealToDealer(){
 	dealerHand.push(dealerCard)
 }
 
-function computeHandTotal(hand) {
-	let total = 0
-	hand.forEach(card => {
-		total += cardLookup(card)
-	})
-	return total
-}
-
 function initialDeal() {
 	dealToPlayer() 
 	dealToDealer()
@@ -197,39 +145,6 @@ function hit() {
 	renderBlackjack()
 }
 
-// function aceEqualsOne() {
-// 	console.log("hit")
-// 	let ace = ("dA", "hA", "cA", "sA")
-// 	if (playerScore > 21 && playerHand.includes(ace)) {
-// 	returnplayerScore -= 10		
-// 	}
-// 	checkHands()
-// 	renderCards()	
-// 	renderBlackjack()
-// 	renderWin()
-// }
-
-// function checkHands() {
-// 	let playerScore = computeHandTotal(playerHand)
-// 	let dealerScore = computeHandTotal(dealerHand)
-// 	if (playerScore > 21 && playerHand.includes((card === "dA" || card === "hA" || card ==="cA" || card === "sA"))) {
-// 		playerScore -= 10		
-// 	} else {
-// 		(playerScore > 21);
-// 		renderPlayerBust()		
-// 	}  
-// 	}
-
-// function checkHands() {
-// 	let playerScore = computeHandTotal(playerHand)
-// 	let dealerScore = computeHandTotal(dealerHand)
-// 	if (playerScore > 21 && playerHand.includes((card === "dA" || card === "hA" || card ==="cA" || card === "sA"))) {
-// 		playerScore -= 10		
-// 	} else {
-// 		renderPlayerBust()
-// 	}
-// }
-
 function renderPlayerBust(){
 	statusEL.textContent = "Player Bust"	
 }
@@ -238,14 +153,28 @@ function renderDealerBust(){
 	statusEL.textContent = "Dealer Bust, Player Wins!"
 }
 
+function computeHandTotal(hand) {
+	let total = 0;
+	hand.forEach(card => {
+		total += cardLookup(card);
+	});
+	total = handleAces(hand, total);
+	return total;
+	}	
+
 function checkHands() {
-	let playerScore = computeHandTotal(playerHand)
-	let dealerScore = computeHandTotal(dealerHand)
+	let playerScore = computeHandTotal(playerHand);
+	let dealerScore = computeHandTotal(dealerHand);
+	updatePlayerScore(playerScore);
+  
 	if (playerScore > 21) {
-		renderPlayerBust()	
+	  renderPlayerBust();
 	}
-	// aceEqualsOne()
-}
+  }
+  
+  function updatePlayerScore(score) {
+	document.getElementById('player-score-value').textContent = playerScore;
+  }
 
 function stand(){
 	let dealerScore = computeHandTotal(dealerHand)
@@ -263,7 +192,17 @@ function stand(){
 	displayDealerCards()
 	renderWin()
 }
-	
+
+function handleAces(hand, total) {
+	let aces = hand.filter(card => card.endsWith("A"));
+	aces.forEach(() => {
+	  if (total > 21) {
+		total -= 10;
+	  }
+	});
+	return total;
+  }
+  
 function renderBlackjack(){
 	let dealerScore = computeHandTotal(dealerHand)
 	let playerScore = computeHandTotal(playerHand)
@@ -296,6 +235,3 @@ function renderWin(){
 	return
 	}
 }
-
-
-

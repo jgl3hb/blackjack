@@ -11,60 +11,44 @@
 	<script defer src="./js/app.js"></script>
 	<title>Blackjack</title>
 </head>
-
-
 <body>
-  <main>
-    <h1>Welcome to Blackjack</h1>
-
-    <section id="dealerhandvalue">
-      <p>Dealer Hand</p>
-    </section>
-
+    <h1>Blackjack</h1>
+    <div id="dealerhandvalue">
+      <p>Dealer</p>
+    </div>
     <div id="dealer-cards">	
       <div id="dcard" class="card large outline"></div>
       <div id="dcard" class="card large outline"></div>
     </div>
-    
-    <section id="rules"> 
+    <div id="rules"> 
       <p>Dealer Draws on 16, Stands on 17</p>
-    </section>
-    
-    <section id="status"> 
+    </div>
+    <div id="status"> 
       <p>Player Make Your Bet</p>
-    </section>
-    
+    </div>
     <div id="player-cards">		
       <div id="pcard" class="card large outline"></div>
       <div id="pcard" class="card large outline"></div>
     </div>
-
-    <section id="playerhandvalue"> 
-      <p>Player Hand</p>
-    </section>
-
-    <section id="bet"> 
+    <div id="player-score">
+      <p>Player Score: <span id="player-score-value">0</span></p>
+    </div>
+    <div  id="playerBank" value="500">500</div>   
+    <div id="bet"> 
       <p>Player Bet</p>
-    </section>
-
-    <section id="bet" class="d-flex justify-content-center">    
+    </div>
+    <div id="bet" class="d-flex justify-content-center">    
       <button type="button" id="bet-1" value="1" class="btn-lg btn-bet-1">$1</button>
       <button type="button" id="bet-5" value="5" class="btn-lg btn-bet-5">$5</button>
       <button type="button" id="bet-25" value="25" class="btn-lg btn-bet-25">$25</button>
       <button type="button" id="bet-100" value="100" class="btn-lg btn-bet-100">$100</button>
-    </section>  
-
-    <section id="dealreset" class="d-flex justify-content-center">
+    </div>  
+    <div id="dealreset" class="d-flex justify-content-center">
       <button type="button" id="deal" class="btn-lg btn-deal">Deal</button>
-    </section> 
-
-    <section id="hitstand" class="d-flex justify-content-center">
+    </div> 
+    <div id="hitstand" class="d-flex justify-content-center">
       <button type="button" id="hit" class="btn-lg btn-hit">Hit</button>
       <button type="button" id="stand" class="btn-lg btn-stand">Stand</button>
-    </section> 
-
-    <section  id="playerBank" value="500">500</section>   
-  
-  </main>
+    </div> 
 </body>
 </html>

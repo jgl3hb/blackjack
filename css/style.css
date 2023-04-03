@@ -1,43 +1,28 @@
-/* No need to use grid, flex and cascading*/
-html {
-  box-sizing: border-box
-}
-/* The Universal Selector */
-*, /* All elements*/
-*::before, /* All ::before pseudo-elements */
-*::after { /* All ::after pseudo-elements */
-  /* height & width will now include border & padding by default
-     but can be over-ridden as needed */
-  box-sizing: inherit;
-}
-
-/* resets font size to be 62.5% of the user preference - 
-   in most browser configurations this will be 10px */
-:root {
-  font-size: 62.5%
-}
-
 body {
   background-image: url("https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6");
   justify-content: center;
 }
 
-main {
-  padding-top: 5px;
-  display: row;
-  justify-content: center;
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("https://us.123rf.com/450wm/yamabikay/yamabikay1706/yamabikay170600015/79675835-green-felt-fabric-for-background-seamless-square-texture-tile-ready-high-resolution-photo-.jpg?ver=6");
+  padding: 20px;
+  max-height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
 }
 
 h1 {
   text-align: center;
   font-weight: bold;
-  color: white;
-}
-
-.container {
-  display: row;
-  flex-direction: column;
-  justify-content: row;
+  color: red;
 }
 
 #burnpile {
